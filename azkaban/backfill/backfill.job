@@ -1,0 +1,8 @@
+job.name=BackfillUtil
+
+retries=0
+
+baseDir=/opt/map-features
+
+type=command
+command=python ${baseDir}/bin/backfill_utility.py ${job.targetDate} ${job.backfillDate} ${job.lookBackDays} ${job.jobs}

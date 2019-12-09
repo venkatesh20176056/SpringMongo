@@ -1,0 +1,5 @@
+[
+  {"varName":"push_campaigns_interacted_with","fun":"COLLECT_UNIK","dType":"arr-str","level":"PUSH","baseColumn":"push_campaigns_interacted_with"},
+  {"varName":"last_push_interaction_date","fun":"MAX","dType":"date","level":"PUSH","baseColumn":"last_push_interaction_date"},
+  {"varName":"last_push_receive_date","fun":"MAX","dType":"date","level":"PUSH","baseColumn":"last_push_receive_date"}
+]

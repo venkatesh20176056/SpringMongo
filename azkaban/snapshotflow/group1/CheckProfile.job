@@ -1,0 +1,6 @@
+job.name=CheckProfile
+
+type=command
+featurePath="${featureRootKeyPrefix}/profile"
+command=python ${baseDir}/bin/check_s3.py ${job.name} ${flowEnv} ${job.targetDate} ${featurePath} --dateFormat "%Y-%m-%d" --dateSeparator "/dt=" --timeout 28800
+dependencies=G1UploadSpecs

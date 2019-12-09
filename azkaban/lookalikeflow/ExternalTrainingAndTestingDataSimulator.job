@@ -1,0 +1,18 @@
+job.name=ExternalTrainingAndTestingDataSimulator
+job.class=com.paytm.map.features.similarity.Evaluation.ExternalTrainingAndTestingDataSimulator
+
+job.driverMem=12g
+job.nExecutors=20
+job.executorMem=16g
+job.executorCores=1
+
+scoreThreshold=0.7
+jobConf="--conf spark.executor.memoryOverhead=6000m --conf spark.network.timeout=720000s"
+
+
+# To be injected by lambda
+job.mainArgs="--ground_truth_universe_path ${ground_truth_universe_path} --seed_path ${seed_path} --execution_timestamp ${executionTimestamp} --segment_id ${segmentId}"
+
+type=command
+
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries} --optCmd ${jobConf} --optArgs ${job.mainArgs}

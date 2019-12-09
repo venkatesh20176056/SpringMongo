@@ -1,0 +1,4 @@
+job.name=LookalikeAzkabanMonitoring
+
+type=command
+command=python3 ${baseDir}/bin/lookalike_azkaban_monitoring.py -f ${flow} -p ${project} --azk_url ${azk_url} -j ${job_id} -b ${midgarBucket} --path ${lookalikeMonitoringPathS3} --cred_path ${cred_path}

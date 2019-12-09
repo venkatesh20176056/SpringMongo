@@ -1,0 +1,22 @@
+{
+    "Name": "${crawler_name}",
+    "Role": "${aws_role}",
+    "DatabaseName": "${database_name}",
+    "Description": "",
+    "Targets": {
+        "S3Targets": [
+            {
+                "Path": "s3://midgar-aws-workspace/prod/mapfeatures/features/${group_id}/flatTable/dt=${target_date}",
+                "Exclusions": []
+            }
+        ],
+        "JdbcTargets": [],
+        "DynamoDBTargets": []
+    },
+    "Classifiers": [],
+    "TablePrefix": "${table_prefix}",
+    "SchemaChangePolicy": {
+        "UpdateBehavior": "LOG",
+        "DeleteBehavior": "LOG"
+    }
+}

@@ -1,0 +1,17 @@
+job.name=PrecisionRecall
+job.class=com.paytm.map.features.similarity.Evaluation.PrecisionRecall
+
+job.driverMem=10g
+job.nExecutors=15
+job.executorMem=10g
+job.executorCores=1
+
+scoreThreshold=0.7
+jobConf="--conf spark.executor.memoryOverhead=5000m --conf spark.network.timeout=720000s"
+
+
+# To be injected by lambda
+job.mainArgs="--ground_truth_universe_path ${ground_truth_universe_path} --param_combination_size ${param_combination_size} --execution_timestamp ${executionTimestamp} --segment_id ${segmentId}""
+type=command
+dependencies=EvalResult
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries} --optCmd ${jobConf} --optArgs ${job.mainArgs}

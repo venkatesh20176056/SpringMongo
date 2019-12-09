@@ -1,0 +1,6 @@
+job.name=UpdateCmaSegmentStatus
+
+
+type=command
+dependencies=UploadCsvToCma
+command=python3 ${baseDir}/bin/update_campaign_segment_status.py --url ${cmaurl} --bucket ${bucket} --segment ${segmentId} --timestamp ${executionTimestamp} --env ${flowEnv} --jobname ${job.name} --awsregion ${awsRegion}

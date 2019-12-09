@@ -1,0 +1,620 @@
+{
+  "order": 0,
+  "index_patterns": [
+    "v14_india_features_*"
+  ],
+  "settings": {
+    "index": {
+      "mapping": {
+        "total_fields": {
+          "limit": "25000"
+        }
+      },
+      "refresh_interval": "900s",
+      "number_of_shards": "20",
+      "translog": {
+        "sync_interval": "10s",
+        "durability": "async"
+      },
+      "number_of_replicas": "2"
+    }
+  },
+  "mappings": {
+    "features": {
+      "dynamic_templates": [
+        {
+          "strings": {
+            "match_mapping_type": "string",
+            "mapping": {
+              "type": "keyword",
+              "index": true
+            }
+          }
+        }
+      ],
+      "properties": {
+        "segments": {
+          "type": "long"
+        },
+        "UPI_status": {
+          "type": "nested",
+          "properties": {
+            "vpa_created": {
+              "type": "date"
+            },
+            "device_binded": {
+              "type": "date"
+            },
+            "bank_account_linked": {
+              "type": "date"
+            },
+            "m_pin_set": {
+              "type": "date"
+            }
+          }
+        },
+        "SMS_sender_name_and_time": {
+          "type": "nested",
+          "properties": {
+            "SenderName": {
+              "type": "keyword"
+            },
+            "SentTimestamp": {
+              "type": "date"
+            }
+          }
+        },
+        "LMS_POSTPAID_account_details": {
+          "type": "nested",
+          "properties": {
+            "AccountNumber": {
+              "type": "keyword"
+            },
+            "BalanceAmount": {
+              "type": "double"
+            },
+            "DueDate": {
+              "type": "date"
+            },
+            "LateFee": {
+              "type": "double"
+            },
+            "TotalAmount": {
+              "type": "double"
+            },
+            "ProductSource": {
+              "type": "keyword"
+            },
+            "ProductType": {
+              "type": "keyword"
+            }
+          }
+        },
+        "device_os_with_version": {
+          "type": "nested",
+          "properties": {
+            "osName": {
+              "type": "keyword"
+            },
+            "osVersion": {
+              "type": "keyword"
+            }
+          }
+        },
+        "PAYTM_promo_usage_dates": {
+          "type": "nested",
+          "properties": {
+            "Date": {
+              "type": "date"
+            },
+            "Promocode": {
+              "type": "keyword"
+            }
+          }
+        },
+        "RU_MB_prepaid_operator_due_dates": {
+          "type": "nested",
+          "properties": {
+            "Operator": {
+              "type": "keyword"
+            },
+            "DueDate": {
+              "type": "date"
+            },
+            "BillAmount": {
+              "type": "double"
+            }
+          }
+        },
+        "RU_MB_postpaid_operator_due_dates": {
+          "type": "nested",
+          "properties": {
+            "Operator": {
+              "type": "keyword"
+            },
+            "DueDate": {
+              "type": "date"
+            },
+            "BillAmount": {
+              "type": "double"
+            }
+          }
+        },
+        "RU_DTH_operator_due_dates": {
+          "type": "nested",
+          "properties": {
+            "Operator": {
+              "type": "keyword"
+            },
+            "DueDate": {
+              "type": "date"
+            },
+            "BillAmount": {
+              "type": "double"
+            }
+          }
+        },
+        "RU_BB_operator_due_dates": {
+          "type": "nested",
+          "properties": {
+            "Operator": {
+              "type": "keyword"
+            },
+            "DueDate": {
+              "type": "date"
+            },
+            "BillAmount": {
+              "type": "double"
+            }
+          }
+        },
+        "RU_DC_operator_due_dates": {
+          "type": "nested",
+          "properties": {
+            "Operator": {
+              "type": "keyword"
+            },
+            "DueDate": {
+              "type": "date"
+            },
+            "BillAmount": {
+              "type": "double"
+            }
+          }
+        },
+        "RU_EC_operator_due_dates": {
+          "type": "nested",
+          "properties": {
+            "Operator": {
+              "type": "keyword"
+            },
+            "DueDate": {
+              "type": "date"
+            },
+            "BillAmount": {
+              "type": "double"
+            }
+          }
+        },
+        "RU_WAT_operator_due_dates": {
+          "type": "nested",
+          "properties": {
+            "Operator": {
+              "type": "keyword"
+            },
+            "DueDate": {
+              "type": "date"
+            },
+            "BillAmount": {
+              "type": "double"
+            }
+          }
+        },
+        "RU_GAS_operator_due_dates": {
+          "type": "nested",
+          "properties": {
+            "Operator": {
+              "type": "keyword"
+            },
+            "DueDate": {
+              "type": "date"
+            },
+            "BillAmount": {
+              "type": "double"
+            }
+          }
+        },
+        "RU_CBL_operator_due_dates": {
+          "type": "nested",
+          "properties": {
+            "Operator": {
+              "type": "keyword"
+            },
+            "DueDate": {
+              "type": "date"
+            },
+            "BillAmount": {
+              "type": "double"
+            }
+          }
+        },
+        "RU_LDL_operator_due_dates": {
+          "type": "nested",
+          "properties": {
+            "Operator": {
+              "type": "keyword"
+            },
+            "DueDate": {
+              "type": "date"
+            },
+            "BillAmount": {
+              "type": "double"
+            }
+          }
+        },
+        "RU_INS_operator_due_dates": {
+          "type": "nested",
+          "properties": {
+            "Operator": {
+              "type": "keyword"
+            },
+            "DueDate": {
+              "type": "date"
+            },
+            "BillAmount": {
+              "type": "double"
+            }
+          }
+        },
+        "RU_LOAN_operator_due_dates": {
+          "type": "nested",
+          "properties": {
+            "Operator": {
+              "type": "keyword"
+            },
+            "DueDate": {
+              "type": "date"
+            },
+            "BillAmount": {
+              "type": "double"
+            }
+          }
+        },
+        "RU_MTC_operator_due_dates": {
+          "type": "nested",
+          "properties": {
+            "Operator": {
+              "type": "keyword"
+            },
+            "DueDate": {
+              "type": "date"
+            },
+            "BillAmount": {
+              "type": "double"
+            }
+          }
+        },
+        "RU_MT_operator_due_dates": {
+          "type": "nested",
+          "properties": {
+            "Operator": {
+              "type": "keyword"
+            },
+            "DueDate": {
+              "type": "date"
+            },
+            "BillAmount": {
+              "type": "double"
+            }
+          }
+        },
+        "RU_DV_operator_due_dates": {
+          "type": "nested",
+          "properties": {
+            "Operator": {
+              "type": "keyword"
+            },
+            "DueDate": {
+              "type": "date"
+            },
+            "BillAmount": {
+              "type": "double"
+            }
+          }
+        },
+        "RU_FT_operator_due_dates": {
+          "type": "nested",
+          "properties": {
+            "Operator": {
+              "type": "keyword"
+            },
+            "DueDate": {
+              "type": "date"
+            },
+            "BillAmount": {
+              "type": "double"
+            }
+          }
+        },
+        "RU_GP_operator_due_dates": {
+          "type": "nested",
+          "properties": {
+            "Operator": {
+              "type": "keyword"
+            },
+            "DueDate": {
+              "type": "date"
+            },
+            "BillAmount": {
+              "type": "double"
+            }
+          }
+        },
+        "RU_CHL_operator_due_dates": {
+          "type": "nested",
+          "properties": {
+            "Operator": {
+              "type": "keyword"
+            },
+            "DueDate": {
+              "type": "date"
+            },
+            "BillAmount": {
+              "type": "double"
+            }
+          }
+        },
+        "RU_MNC_operator_due_dates": {
+          "type": "nested",
+          "properties": {
+            "Operator": {
+              "type": "keyword"
+            },
+            "DueDate": {
+              "type": "date"
+            },
+            "BillAmount": {
+              "type": "double"
+            }
+          }
+        },
+        "RU_TOLL_operator_due_dates": {
+          "type": "nested",
+          "properties": {
+            "Operator": {
+              "type": "keyword"
+            },
+            "DueDate": {
+              "type": "date"
+            },
+            "BillAmount": {
+              "type": "double"
+            }
+          }
+        },
+        "SCB_Features": {
+          "type": "nested",
+          "properties": {
+            "campaignName":{
+              "type": "keyword"
+            },
+            "current_unAck_count": {
+              "type": "long"
+            },
+            "current_initialized_count": {
+              "type": "long"
+            },
+            "current_inprogress_count": {
+              "type": "long"
+            },
+            "current_completed_count": {
+              "type": "long"
+            },
+            "current_expired_count": {
+              "type": "long"
+            },
+            "total_instance_count": {
+              "type": "long"
+            },
+            "last_camp_completed_date": {
+              "type": "date"
+            },
+            "last_camp_expired_date": {
+              "type": "date"
+            },
+            "current_init_inprog_start_date": {
+              "type": "date"
+            },
+            "current_init_inprog_expiry_date": {
+              "type": "date"
+            },
+            "current_inprogress_stage": {
+              "type": "long"
+            },
+            "current_inprog_last_txn_date": {
+              "type": "date"
+            }
+          }
+        },
+        "SCB_unAck": {
+          "type": "nested",
+          "properties": {
+            "campaignName": {
+              "type": "keyword"
+            },
+            "current_unAck_count": {
+              "type": "long"
+            }
+          }
+        },
+        "SCB_initialized": {
+          "type": "nested",
+          "properties": {
+            "campaignName": {
+              "type": "keyword"
+            },
+            "current_initialized_count": {
+              "type": "long"
+            }
+          }
+        },
+        "SCB_inprogress": {
+          "type": "nested",
+          "properties": {
+            "campaignName": {
+              "type": "keyword"
+            },
+            "current_inprogress_count": {
+              "type": "long"
+            }
+          }
+        },
+        "SCB_completed": {
+          "type": "nested",
+          "properties": {
+            "campaignName": {
+              "type": "keyword"
+            },
+            "current_completed_count": {
+              "type": "long"
+            }
+          }
+        },
+        "SCB_expired": {
+          "type": "nested",
+          "properties": {
+            "campaignName": {
+              "type": "keyword"
+            },
+            "current_expired_count": {
+              "type": "long"
+            }
+          }
+        },
+        "SCB_totalinstance": {
+          "type": "nested",
+          "properties": {
+            "campaignName": {
+              "type": "keyword"
+            },
+            "total_instance_count": {
+              "type": "long"
+            }
+          }
+        },
+        "SCB_lastcompleted": {
+          "type": "nested",
+          "properties": {
+            "campaignName": {
+              "type": "keyword"
+            },
+            "last_camp_completed_date": {
+              "type": "date"
+            }
+          }
+        },
+      "SCB_lastexpired": {
+        "type": "nested",
+        "properties": {
+          "campaignName": {
+            "type": "keyword"
+          },
+          "last_camp_expired_date": {
+            "type": "date"
+          }
+        }
+      },
+      "SCB_inprogress_start": {
+        "type": "nested",
+        "properties": {
+          "campaignName": {
+            "type": "keyword"
+          },
+          "current_init_inprog_start_date": {
+            "type": "date"
+          }
+        }
+      },
+      "SCB_inprogress_expiry": {
+        "type": "nested",
+        "properties": {
+          "campaignName": {
+            "type": "keyword"
+          },
+          "current_init_inprog_expiry_date": {
+            "type": "date"
+          }
+        }
+      },
+      "SCB_inprogress_stage": {
+        "type": "nested",
+        "properties": {
+          "campaignName": {
+            "type": "keyword"
+          },
+          "current_inprogress_stage": {
+            "type": "long"
+          }
+        }
+      },
+      "SCB_inprogress_last_txn_date": {
+        "type": "nested",
+        "properties": {
+          "campaignName":{
+            "type": "keyword"
+          },
+          "current_inprog_last_txn_date": {
+            "type": "date"
+          }
+        }
+      },
+      "pred_rech_dates": {
+          "type": "nested",
+          "properties": {
+            "BenPhoneNo": {
+              "type": "keyword"
+            },
+            "Operator": {
+              "type": "keyword"
+            },
+            "Circle": {
+              "type": "keyword"
+            },
+            "PredictedRechDate": {
+              "type": "date"
+            }
+          }
+        },
+        "WALLET_SUBWALLET_last_balance_credited_date": {
+          "type": "nested",
+          "properties": {
+            "ppi_type" : {
+              "type": "keyword"
+            },
+            "issuer_id" : {
+              "type": "long"
+            },
+            "last_balance_credited_dt" : {
+              "type": "date"
+            }
+          }
+        },
+        "WALLET_SUBWALLET_balance": {
+          "type": "nested",
+          "properties": {
+            "ppi_type" : {
+              "type": "keyword"
+            },
+            "issuer_id" : {
+              "type": "long"
+            },
+            "balance" : {
+              "type": "double"
+            }
+          }
+        }
+      }
+    }
+  },
+  "aliases": {}
+}

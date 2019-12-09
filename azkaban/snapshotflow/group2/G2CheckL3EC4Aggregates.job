@@ -1,0 +1,6 @@
+job.name=G2CheckL3EC4Aggregates
+
+type=command
+featurePath="${rawTablePathS3}/aggregates/L3EC4"
+command=python ${baseDir}/bin/check_s3.py ${job.name} ${flowEnv} ${job.targetDate} ${featurePath} --dateFormat "%Y-%m-%d" --dateSeparator "/dt="
+dependencies=G2CreateL3EC2II

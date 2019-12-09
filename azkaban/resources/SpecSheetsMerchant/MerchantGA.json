@@ -1,0 +1,5 @@
+[
+  {"varName":"MGA_total_pdp_sessions_web","fun":"SUM","dType":"long","level":"MGA"},
+  {"varName":"MGA_total_pdp_sessions_app","fun":"SUM","dType":"long","level":"MGA"},
+  {"varName":"MGA_last_seen_all_date","fun":"MAX","dType":"date","level":"MGA"}
+]

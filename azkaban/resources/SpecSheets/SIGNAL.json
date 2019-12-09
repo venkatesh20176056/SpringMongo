@@ -1,0 +1,8 @@
+[
+  {"varName":"SIGNAL_brands_searched","fun":"COLLECT_UNIK","dType":"arr-str","level":"SIGNAL"},
+  {"varName":"SIGNAL_categories_searched","fun":"COLLECT_UNIK","dType":"arr-str","level":"SIGNAL"},
+  {"varName":"SIGNAL_categories_browsed","fun":"COLLECT_UNIK","dType":"arr-str","level":"SIGNAL"},
+  {"varName":"SIGNAL_categories_clicked","fun":"COLLECT_UNIK","dType":"arr-str","level":"SIGNAL"},
+  {"varName":"SIGNAL_pay_screen_flag","fun":"max","dType":"int","level":"SIGNAL"},
+  {"varName": "SIGNAL_paytm_first_screen_visited", "fun":"max","dType":"int","level":"SIGNAL"}
+]

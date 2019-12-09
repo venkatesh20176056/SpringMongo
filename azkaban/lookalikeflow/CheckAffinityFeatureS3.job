@@ -1,0 +1,4 @@
+job.name=CheckAffinityFeatureS3
+
+type=command
+command=python ${baseDir}/bin/check_s3.py ${job.name} ${flowEnv} ${job.targetDate} ${shinraFeatures} --dateFormat "%Y-%m-%d"

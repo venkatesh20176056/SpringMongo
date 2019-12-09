@@ -1,0 +1,3 @@
+[
+  {"varName":"SCB_supercash_status","fun":"COLLECT_SET","dType":"merchantSuperCashStatusListType","baseColumn":"SCB_supercash_status","level":"MSC"}
+]

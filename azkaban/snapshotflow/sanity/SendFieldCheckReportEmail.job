@@ -1,0 +1,11 @@
+job.name=SendFieldCheckReportEmail
+
+emailContentPath=s3://midgar-aws-workspace/%s/mapfeatures/features/fieldCheckSanityReport/%s/dt=
+FCSR_email_from=noreply_paytmlabs@paytm.com
+FCSR_email_to=pawan.lamba@paytm.com,sagun@paytm.com,santoshi.nadar@paytm.com,peter.pandelidis@paytm.com,amrit.praharaj@paytm.com,megha.narayanan@paytm.com
+FCSR_email_subject="Sanity Check - Check Fields for Group:%s"
+FCSR_email_CC=midgar.dev@paytm.com
+
+type=command
+command=python -u ${baseDir}/bin/send_field_check_report_email.py ${job.targetDate} 1 ${flowEnv} ${emailContentPath} ${FCSR_email_from} ${FCSR_email_to} ${FCSR_email_subject} ${FCSR_email_CC}
+dependencies=G3CheckFields

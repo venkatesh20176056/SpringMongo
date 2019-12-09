@@ -1,0 +1,5 @@
+job.name=G3CheckCustomerSegmentation
+
+type=command
+segmentPath="${featuresPathS3}/3/ids"
+command=python ${baseDir}/bin/check_s3.py ${job.name} ${flowEnv} ${job.targetDate} ${segmentPath} --dateFormat "%Y-%m-%d" --dateSeparator "/dt=" --timeout 28800

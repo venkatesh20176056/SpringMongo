@@ -1,0 +1,38 @@
+{
+  "order": 0,
+  "aliases": {},
+  "settings": {
+    "index": {
+      "mapping": {
+        "total_fields": {
+          "limit": "25000"
+        },
+        "nested_fields": {
+          "limit": "200"
+        }
+      },
+      "refresh_interval": "900s",
+      "number_of_shards": "20",
+      "translog": {
+        "sync_interval": "10s",
+        "durability": "async"
+      },
+      "number_of_replicas": "2"
+    }
+  },
+  "mappings": {
+    "features": {
+      "dynamic_templates": [
+        {
+          "strings": {
+            "match_mapping_type": "string",
+            "mapping": {
+              "type": "keyword",
+              "index": true
+            }
+          }
+        }
+      ]
+    }
+  }
+}

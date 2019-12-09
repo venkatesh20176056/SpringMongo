@@ -1,0 +1,10 @@
+job.name=FeatureUsageReport
+job.class=com.paytm.map.featuresanalysis.FeatureUsageReport
+
+job.nExecutors=1
+job.executorMem=1g
+job.driverMem=1g
+
+dbName=paytm-india,paytm-merchant-india,paytm-canada
+type=command
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries} --optArgs "${dbName}"

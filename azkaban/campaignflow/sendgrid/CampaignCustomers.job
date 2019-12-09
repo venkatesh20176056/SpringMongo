@@ -1,0 +1,9 @@
+job.name=CampaignCustomers
+job.class=com.paytm.map.features.campaigns.CampaignCustomers
+
+job.nExecutors=10
+job.executorMem=5g
+job.executorCores=1
+
+type=command
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries}

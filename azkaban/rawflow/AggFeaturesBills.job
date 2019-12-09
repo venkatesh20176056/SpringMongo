@@ -1,0 +1,8 @@
+job.name=AggFeaturesBills
+job.class=com.paytm.map.features.base.AggFeaturesBills
+
+job.executorMem=5g
+
+type=command
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries}
+dependencies=WalletFeatures

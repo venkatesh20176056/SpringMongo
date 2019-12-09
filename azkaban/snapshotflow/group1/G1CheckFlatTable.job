@@ -1,0 +1,7 @@
+job.name=G1CheckFlatTable
+
+featurePath="${featuresPathS3}/${groupPrefix}/flatTable"
+
+type=command
+command=python ${baseDir}/bin/check_s3.py ${job.name} ${flowEnv} ${job.targetDate} ${featurePath} --dateFormat "%Y-%m-%d" --dateSeparator "/dt="
+dependencies=G1JoinDatasets

@@ -1,0 +1,18 @@
+[
+  {"varName":"PAYTM_first_transaction_size","fun":"GETFIRST","level":"PAYTM","dType":"double","baseColumn":"L1_first_transaction_size","partitionBy":"customer_id","orderBy":"dt"},
+  {"varName":"PAYTM_percentage_discount_by_transaction_size","fun":"DIVSN","level":"PAYTM","dType":"double","baseColumn":"PAYTM_total_discount_transaction_size","downCol":"PAYTM_total_transaction_size","stage":"POST_UDF"},
+  {"varName":"PAYTM_total_cashback_transaction_size","fun":"SUM","level":"PAYTM","dType":"double","baseColumn":"L1_total_cashback_transaction_size"},
+  {"varName":"PAYTM_total_transaction_count","fun":"SUM","level":"PAYTM","dType":"long","baseColumn":"L1_total_transaction_count"},
+  {"varName":"PAYTM_total_cashback_transaction_count","fun":"SUM","level":"PAYTM","dType":"long","baseColumn":"L1_total_cashback_transaction_count"},
+  {"varName":"PAYTM_total_discount_transaction_count","fun":"SUM","level":"PAYTM","dType":"long","baseColumn":"L1_total_discount_transaction_count"},
+  {"varName":"PAYTM_last_transaction_date","fun":"MAX","level":"PAYTM","dType":"date","baseColumn":"L1_last_transaction_date"},
+  {"varName":"PAYTM_total_transaction_size","fun":"SUM","level":"PAYTM","dType":"double","baseColumn":"L1_total_transaction_size"},
+  {"varName":"PAYTM_percentage_cashback_by_transaction_count","fun":"DIVSN","level":"PAYTM","dType":"double","baseColumn":"PAYTM_total_cashback_transaction_count","downCol":"PAYTM_total_transaction_count","stage":"POST_UDF"},
+  {"varName":"PAYTM_avg_transaction_size","fun":"DIVSN","level":"PAYTM","dType":"double","baseColumn":"PAYTM_total_transaction_size","downCol":"PAYTM_total_transaction_count","stage":"POST_UDF"},
+  {"varName":"PAYTM_last_transaction_size","fun":"GETLAST","level":"PAYTM","dType":"double","baseColumn":"L1_last_transaction_size","partitionBy":"customer_id","orderBy":"dt"},
+  {"varName":"PAYTM_first_transaction_date","fun":"MIN","level":"PAYTM","dType":"date","baseColumn":"L1_first_transaction_date"},
+  {"varName":"PAYTM_percentage_discount_by_transaction_count","fun":"DIVSN","level":"PAYTM","dType":"double","baseColumn":"PAYTM_total_discount_transaction_count","downCol":"PAYTM_total_transaction_count","stage":"POST_UDF"},
+  {"varName":"PAYTM_percentage_cashback_by_transaction_size","fun":"DIVSN","level":"PAYTM","dType":"double","baseColumn":"PAYTM_total_cashback_transaction_size","downCol":"PAYTM_total_transaction_size","stage":"POST_UDF"},
+  {"varName":"PAYTM_total_discount_transaction_size","fun":"SUM","level":"PAYTM","dType":"double","baseColumn":"L1_total_discount_transaction_size"},
+  {"varName":"PAYTM_promo_usage_dates","fun":"PROMO_USAGE","level":"PAYTM","dType":"promoType","baseColumn":"L1_promocodes_used"}
+]

@@ -1,0 +1,12 @@
+job.name=G2CreateL2EC
+job.class=com.paytm.map.features.Chakki.CreateDataSet
+
+job.nExecutors=75
+job.executorMem=12g
+job.executorCores=2
+
+type=command
+levelPrefix=EC
+
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries} --optCmds "--conf spark.sql.shuffle.partitions=1000" --optArgs "${levelPrefix} ${groupPrefix}"
+dependencies=G2CreateL2BK

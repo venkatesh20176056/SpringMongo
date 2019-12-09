@@ -1,0 +1,2 @@
+type=command
+command=python ${baseDir}/bin/increase_emr_cluster.py "Midgar-MAP-features-Prod" "SPOT TASK" 10 ${flowEnv}

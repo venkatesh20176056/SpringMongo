@@ -1,0 +1,12 @@
+job.name=CreateProfile
+job.class=com.paytm.map.features.datasets.Profile
+
+type=command
+
+job.nExecutors=160
+job.executorMem=16g
+job.executorCores=2
+job.driverMem=16g
+
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries}
+dependencies=AggGoldFeatures,SignalFeatures,AuditLogsTable,CheckBankProfile,CheckUpiFeatures

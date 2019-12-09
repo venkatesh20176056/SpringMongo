@@ -1,0 +1,5 @@
+job.name=G4CheckCustomerSegmentation
+
+type=command
+segmentPath="${featuresPathS3}/4/ids"
+command=python ${baseDir}/bin/check_s3.py ${job.name} ${flowEnv} ${job.targetDate} ${segmentPath} --dateFormat "%Y-%m-%d" --dateSeparator "/dt=" --timeout 28800

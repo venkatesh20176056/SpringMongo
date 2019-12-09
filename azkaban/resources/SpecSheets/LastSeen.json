@@ -1,0 +1,7 @@
+[
+  {"varName":"last_seen_paytm_web_date","fun":"MAX","dType":"date","level":"LS", "baseColumn":"paytm_web"},
+  {"varName":"last_seen_paytm_app_date","fun":"MAX","dType":"date","level":"LS", "baseColumn":"paytm_app"},
+  {"varName":"last_seen_mall_web_date","fun":"MAX","dType":"date","level":"LS", "baseColumn":"mall_web"},
+  {"varName":"last_seen_mall_app_date","fun":"MAX","dType":"date","level":"LS", "baseColumn":"mall_app"},
+  {"varName":"last_seen_all_date","fun":"MAX","dType":"date","level":"LS", "baseColumn":"all"}
+]

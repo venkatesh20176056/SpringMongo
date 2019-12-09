@@ -1,0 +1,1 @@
+{"class":"org.apache.spark.ml.feature.MinHashLSHModel","timestamp":1571755140553,"sparkVersion":"2.3.1","uid":"mh-lsh_f14167cd7449","paramMap":{"inputCol":"features_sparse","numHashTables":3,"outputCol":"hashes"}}

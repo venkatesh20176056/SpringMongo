@@ -1,0 +1,8 @@
+Class,Vertical,Category,Name,Alias,Datatype,Description,isEnable,ExecLevel,isExposed
+ChannelClass,ChannelVertical,ChannelCategory,customer_id,Customer ID,Long,Customer ID,1,CHANNEL,1
+ChannelClass,ChannelVertical,ChannelCategory,average_monthly_transaction_amount,Average Monthly Transaction Value,Double,Average Monthly Transaction Value,1,CHANNEL,1
+ChannelClass,ChannelVertical,ChannelCategory,phone_no,Phone Number,String,Phone Number,1,CHANNEL,1
+ChannelClass,ChannelVertical,ChannelCategory,merchants,Merchant Features,Nested,Merchant Features,1,CHANNEL,1
+ChannelClass,ChannelVertical,ChannelCategory,merchants.shop_id,Merchant ID,String,Merchant ID,1,NESTED,1
+ChannelClass,ChannelVertical,ChannelCategory,merchants.last_transaction_date,Last Transaction Date,Date,Last Transaction Date,1,NESTED,1
+ChannelClass,ChannelVertical,ChannelCategory,merchants.total_transactions_month_amount,Transaction Value in Last Month,Double,Transaction Value in Last Month,1,NESTED,1

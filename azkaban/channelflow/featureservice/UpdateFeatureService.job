@@ -1,0 +1,5 @@
+job.name=UpdateFeatureService
+
+
+type=command
+command=python ${baseDir}/bin/check_feature_service_india.py ${baseDir}/resources/feature_list_india_channel.csv ${flowEnv} ${baseDir} ${job.targetDate} ${tenant}

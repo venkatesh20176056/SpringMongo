@@ -1,0 +1,4 @@
+[
+  {"varName" : "INSURANCE_category_txn_count", "fun" : "NESTED_SUM", "dType" : "insuranceCategoryCountListType", "level" : "INSURANCE", "baseColumn":"INSURANCE_category_txn_count", "groupBy":"category_id","sumOver":"count"},
+  {"varName":"INSURANCE_last_category_txn","fun":"NESTED_MAX","level":"INSURANCE","dType":"insuranceCategoryTxnListType","baseColumn":"INSURANCE_last_category_txn","groupBy":"category_id","maxBy":"created_at"}
+]

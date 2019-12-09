@@ -1,0 +1,5 @@
+job.name=UploadSpecs
+
+type=command
+command=python ${baseDir}/bin/UploadSpecsNFeatureList.py ${baseDir}/resources ${resourcesPathS3} merchant
+dependencies=UpdateESTemplate

@@ -1,0 +1,19 @@
+job.name=FeaturesGroup3DeltaExport
+job.class=com.paytm.map.features.export.UpsertSnapshotDeltaParquetToRestES
+
+job.driverMem=8g
+job.nExecutors=5
+job.executorMem=16g
+job.executorCores=4
+
+type=command
+
+esBatchSize=200
+maxUploadSize=10
+esConcurrentRequest=1
+flushTimeout=30
+
+job.mainArgs="${esNodes} ${index} ${indexType} ${esId} ${esBatchSize} ${maxUploadSize} ${esConcurrentRequest} ${flushTimeout} 3 false"
+
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries} --optArgs ${job.mainArgs}
+dependencies=FeaturesGroup4ExportFlow,CheckFeaturesGroup3

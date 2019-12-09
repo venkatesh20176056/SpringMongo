@@ -1,0 +1,207 @@
+Class,Vertical,Category,Field,Alias,Type,Description
+Profile,Profile,Profile,customer_id,Customer Id,Long,Unique ID for each Paytm Canada customer
+Profile,Profile,Profile,email,Email,String,Customer email - not verified unless email_verified = 1
+Profile,Profile,Profile,email_id,Email Id,String,Customer email - not verified unless email_verified = 2
+Profile,Profile,Profile,country_code,Country Code,String,Customer country
+Profile,Profile,Profile,year_of_birth,Year Of Birth,Integer,Year of birth (not verified unless KYC completed)
+Profile,Profile,Profile,risk_score,Risk Score,Integer,Automatic estimated risk score for customer
+Profile,Profile,Profile,notification_flags,Notification Flags,Integer,Notification flags from within app settings # 0 - Both Unchecked # 1 - Email Update Checked Indian Biller Unchecke # 2- Email Update Unchecked Indian Biller Checked # 3- Both Checked
+Profile,Profile,Profile,kyc_verified,Kyc Verified,Integer,Customer has completed KYC verification
+Profile,Profile,Profile,first_name,First Name,String,Customer name
+Profile,Profile,Profile,last_name,Last Name,String,Customer name
+Profile,Profile,Profile,referrer_code,Referrer Code,String,Code used for referring sometimes specific to marketing campaigns
+Profile,Profile,Profile,count_phone_numbers,Count Phone Numbers,Long,Number of phone numbers added to account
+Profile,Profile,Profile,number,Phone Number,String,Most recent verified phone number
+Profile,Profile,Profile,address_city,Address City,String,City from customer address
+Profile,Profile,Profile,province_state,Province State,String,Province entered as the customer's address.
+Profile,Profile,Profile,country,Country,String,Country entered as the customer's address
+Profile,Profile,Profile,latitude,Latitude,Double,Latitude estimated for customer's IP address
+Profile,Profile,Profile,longitude,Longitude,Double,Longitude estimated for customer's IP address
+Profile,Profile,Profile,ip_location_city,Ip Location City,String,City estimated for customer's IP address
+Profile,Profile,Profile,os_type,Os Type,String,Latest operating system used by transacting customers
+Profile,Profile,Profile,email_verified,Email Verified,Integer,1 if customer has verified their email address 0 otherwise
+Profile,Profile,Profile,phone_verified,Phone Verified,Integer,1 if customer has verified their phone number 0 otherwise
+Profile,Profile,Profile,address_entered,Address Entered,Integer,1 if customer has entered their address (city) 0 otherwise
+Profile,Profile,Profile,phone_entered,Phone Entered,Integer,1 if customer has entered a phone number 0 otherwise
+Profile,Profile,Profile,days_since_signup,Days Since Signup,Integer,Number of days since customer signed up (downloaded the app and entered an email address)
+Profile,Profile,Profile,days_to_email_verification,Days To Email Verification,Integer,Days between when a customer signed up and when they verified their email
+Profile,Profile,Profile,days_to_phone_verification,Days To Phone Verification,Integer,Days between when a customer signed up and when they were KYCd
+Profile,Profile,Profile,days_to_kyc_verification,Days To Kyc Verification,Integer,Days between when a customer signed up and when they verified their phone
+Profile,Profile,Profile,age,Age,Integer,Approximate age - current year minus birth year
+Profile,Profile,Profile,email_notifications_subscribed,Email Notifications Subscribed,Integer,Customer has agreed to receive marketing emails (notifcation flags = 1 or 3)
+Profile,Profile,Profile,score_increasing_675_date,Customer Score Crossing 675 Date,Date,Date when customer score crossed 675
+Behavioural,Wallet,Wallet,current_wallet_balance,Current Wallet Balance,Double,current balance of Paytm cash in customer's wallet
+Transactional,Wallet,Wallet,total_wallet_txn_amount,Total Wallet Txn Amount,Double,Total amount of paytm cash sent or received in customer's wallet
+Behavioural,Wallet,Wallet,avg_wallet_txn_amount,Avg Wallet Txn Amount,Double,Avg amount of paytm cash sent or received in customer's wallet
+Transactional,Wallet,Wallet,total_wallet_transactions,Total Wallet Transactions,Long,Total number of transactions made in customer's wallet
+Transactional,Wallet,Wallet,total_p2p_txn_amount,Total P2P Txn Amount,Double,Total paytm cash sent by person to person transfer from customer's wallet
+Transactional,Wallet,Wallet,total_emt_txn_amount,Total Emt Txn Amount,Double,Total paytm cash added by email transfer to customer's wallet
+Transactional,Wallet,Wallet,total_can_post_txn_amount,Total Can Post Txn Amount,Double,Total paytm cash added by canada post topup to customer's wallet
+Transactional,Wallet,Wallet,total_pad_topup_txn_amount,Total Pad Topup Txn Amount,Double,Total paytm cash added by bank account to customer's wallet
+Transactional,Wallet,Wallet,total_customer_care_txn_amount,Total Customer Care Txn Amount,Double,Total customer care cash received to customer's wallet
+Behavioural,Wallet,Wallet,avg_p2p_txn_amount,Avg P2P Txn Amount,Double,Avg paytm cash sent by person to person transfer from customer's wallet
+Behavioural,Wallet,Wallet,avg_emt_txn_amount,Avg Emt Txn Amount,Double,Avg paytm cash added by email transfer to customer's wallet
+Behavioural,Wallet,Wallet,avg_can_post_txn_amount,Avg Can Post Txn Amount,Double,Avg paytm cash added by canada post topup to customer's wallet
+Behavioural,Wallet,Wallet,avg_pad_topup_txn_amount,Avg Pad Topup Txn Amount,Double,Avg paytm cash added by bank account to customer's wallet
+Behavioural,Wallet,Wallet,avg_customer_care_txn_amount,Avg Customer Care Txn Amount,Double,Avg customer care cash received to customer's wallet
+Transactional,Wallet,Wallet,count_p2p_txns,Count P2P Txns,Long,Total person to person transfer transactions from customer's wallet
+Transactional,Wallet,Wallet,count_emt_txns,Count Emt Txns,Long,Total email transfer transactions to customer's wallet
+Transactional,Wallet,Wallet,count_can_post_txns,Count Can Post Txns,Long,Total canada post topup transactions to customer's wallet
+Transactional,Wallet,Wallet,count_pad_topup_txns,Count Pad Topup Txns,Long,Total bank account transactions to customer's wallet
+Transactional,Wallet,Wallet,count_customer_care_txns,Count Customer Care Txns,Long,Total customer care transactions received to customer's wallet
+Transactional,Wallet,Wallet,preferred_funding_source,Preferred Funding Source,String,Top funding source in terms of transactions - emt / canada post / bank account
+Transactional,Billers,Billers,num_canadian_payees_added,Num Canadian Payees Added,Long,Count of distinct Canadian payees added by the customer
+Transactional,Billers,Billers,num_indian_payees_added,Num Indian Payees Added,Long,Count of distinct Indian payees added by the customer
+Transactional,All,All,total_orders,Total Orders,Long,Total orders made by the customer (both billers and gift cards)
+Transactional,Billers,Billers,total_bill_orders,Total Bill Orders,Long,Total payee orders made by the customer
+Transactional,Billers,Billers,total_canadian_bill_orders,Total Canadian Bill Orders,Long,Total payee orders made to Canadian payees
+Transactional,Billers,Billers,total_indian_bill_orders,Total Indian Bill Orders,Long,Total payee orders made to Indian payees
+Transactional,Gift Cards,Gift Cards,total_gift_cards_orders,Total Gift Cards Orders,Long,Total gift card orders made to Canadian payees
+Transactional,Billers,Billers,total_spent,Total Spent,Double,Total spent on all products by the customer
+Behavioural,Billers,Billers,avg_spend_per_order,Avg Spend Per Order,Double,Average spent per order on all products
+Behavioural,Billers,Billers,avg_bill_spend_per_order,Avg Bill Spend Per Order,Double,Average spent per payee order 
+Behavioural,Gift Cards,Gift Cards,avg_gift_card_amount,Avg Gift Card Amount,Double,Average spent per gift card order 
+Transactional,All,All,count_promo_codes_used,Count Promo Codes Used,Long,Total promo codes that customer has used
+Transactional,All,All,sum_promo_cash_received,Sum Promo Cash Received,Double,Total promo cash received by customer
+Transactional,Billers,Billers,num_billers_paid,Num Billers Paid,Long,Number of unique billers paid
+Transactional,Billers,Billers,num_biller_categories_paid,Num Biller Categories Paid,Long,Number of unique biller categories paid
+Transactional,Payments,Payments,count_wallet_orders,Count Wallet Orders,Long,Total orders paid partially or fully using wallet 
+Transactional,Payments,Payments,count_cc_orders,Count Cc Orders,Long,Total orders paid partially or fully using credit card
+Transactional,Payments,Payments,count_bank_orders,Count Bank Orders,Long,Total orders paid partially or fully using bank account
+Transactional,Payments,Payments,total_spent_wallet,Total Spent Wallet,Double,Total dollars spent on orders partially or fully using wallet
+Transactional,Payments,Payments,total_spent_cc,Total Spent Cc,Double,Total dollars spent on orders partially or fully using credit card
+Transactional,Payments,Payments,total_spent_bank,Total Spent Bank,Double,Total dollars spent on orders partially or fully using bank (pad)
+Behavioural,All,All,avg_order_time,Avg Order Time,Double,Average time of day when a customer makes orders in hours as decimal
+Behavioural,Billers,Billers,avg_bill_order_time,Avg Bill Order Time,Double,Average time of day when a customer makes bill orders in hours as decimal
+Transactional,Billers,Billers,most_recent_biller_paid,Most Recent Biller Paid,String,Biller paid in latest biller order
+Transactional,Gift Cards,Gift Cards,most_recent_gift_card_purchase,Most Recent Gift Card Purchase,String,Gift card purchased in latest gift card order
+Transactional,Gift Cards,Gift Cards,preferred_gift_card_name_amount_30_days,Preferred Gift Card Name Amount In The Past 30 Days,String,Most-purchased gift card last 30 days
+Transactional,Gift Cards,Gift Cards,gift_card_name_amount_paid_30_days,Gift Card Name Amount Paid In The Past 30 Days,List[String],List of all gift cards that a customer has bought in the last 30 days
+Transactional,Gift Cards,Gift Cards,gift_card_name_amount_paid_multiple_times_30_days,Gift Card Name Amount Paid Multiple Times In The Past 30 Days,List[String],List of all gift cards that a customer has bought multiple times in the last 30 days
+Transactional,Gift Cards,Gift Cards,preferred_gift_card_name_amount_60_days,Preferred Gift Card Name Amount In The Past 60 Days,String,Most-purchased gift card last 60 days
+Transactional,Gift Cards,Gift Cards,gift_card_name_amount_paid_60_days,Gift Card Name Amount Paid In The Past 60 Days,List[String],List of all gift cards that a customer has bought in the last 60 days
+Transactional,Gift Cards,Gift Cards,gift_card_name_amount_paid_multiple_times_60_days,Gift Card Name Amount Paid Multiple Times In The Past 60 Days,List[String],List of all gift cards that a customer has bought multiple times in the last 60 days
+Transactional,Gift Cards,Gift Cards,preferred_gift_card_name_amount_90_days,Preferred Gift Card Name Amount In The Past 90 Days,String,Most-purchased gift card last 90 days
+Transactional,Gift Cards,Gift Cards,gift_card_name_amount_paid_90_days,Gift Card Name Amount Paid In The Past 90 Days,List[String],List of all gift cards that a customer has bought in the last 90 days
+Transactional,Gift Cards,Gift Cards,gift_card_name_amount_paid_multiple_times_90_days,Gift Card Name Amount Paid Multiple Times In The Past 90 Days,List[String],List of all gift cards that a customer has bought multiple times in the last 90 days
+Transactional,Gift Cards,Gift Cards,preferred_gift_card_name_amount_120_days,Preferred Gift Card Name Amount In The Past 120 Days,String,Most-purchased gift card last 120 days
+Transactional,Gift Cards,Gift Cards,gift_card_name_amount_paid_120_days,Gift Card Name Amount Paid In The Past 120 Days,List[String],List of all gift cards that a customer has bought in the last 120 days
+Transactional,Gift Cards,Gift Cards,gift_card_name_amount_paid_multiple_times_120_days,Gift Card Name Amount Paid Multiple Times In The Past 120 Days,List[String],List of all gift cards that a customer has bought multiple times in the last 120 days
+Transactional,Gift Cards,Gift Cards,preferred_gift_card_name_amount_150_days,Preferred Gift Card Name Amount In The Past 150 Days,String,Most-purchased gift card last 150 days
+Transactional,Gift Cards,Gift Cards,gift_card_name_amount_paid_150_days,Gift Card Name Amount Paid In The Past 150 Days,List[String],List of all gift cards that a customer has bought in the last 150 days
+Transactional,Gift Cards,Gift Cards,gift_card_name_amount_paid_multiple_times_150_days,Gift Card Name Amount Paid Multiple Times In The Past 150 Days,List[String],List of all gift cards that a customer has bought multiple times in the last 150 days
+Transactional,Gift Cards,Gift Cards,preferred_gift_card_name_amount_180_days,Preferred Gift Card Name Amount In The Past 180 Days,String,Most-purchased gift card last 180 days
+Transactional,Gift Cards,Gift Cards,gift_card_name_amount_paid_180_days,Gift Card Name Amount Paid In The Past 180 Days,List[String],List of all gift cards that a customer has bought in the last 180 days
+Transactional,Gift Cards,Gift Cards,gift_card_name_amount_paid_multiple_times_180_days,Gift Card Name Amount Paid Multiple Times In The Past 180 Days,List[String],List of all gift cards that a customer has bought multiple times in the last 180 days
+Transactional,Gift Cards,Gift Cards,preferred_gift_card_name_amount_730_days,Preferred Gift Card Name Amount In The Past 2 Years,String,Most-purchased gift card last 2 years days
+Transactional,Gift Cards,Gift Cards,gift_card_name_amount_paid_730_days,Gift Card Name Amount Paid In The Past 2 Years,List[String],List of all gift cards that a customer has bought in the last 2 years days
+Transactional,Gift Cards,Gift Cards,gift_card_name_amount_paid_multiple_times_730_days,Gift Card Name Amount Paid Multiple Times In The Past 2 Years,List[String],List of all gift cards that a customer has bought multiple times in the last 2 years days
+Transactional,Billers,Billers,preferred_biller_name_30_days,Preferred Biller Name In The Past 30 Days,String,Most-paid biller last 30 days
+Transactional,Billers,Billers,biller_name_paid_30_days,Biller Name Paid In The Past 30 Days,List[String],List of all billers customer has paid in the last 30 days
+Transactional,Billers,Billers,biller_name_paid_multiple_times_30_days,Biller Name Paid Multiple Times In The Past 30 Days,List[String],List of all billers customer has paid multiple times in the last 30 days
+Transactional,Billers,Billers,preferred_biller_name_60_days,Preferred Biller Name In The Past 60 Days,String,Most-paid biller last 60 days
+Transactional,Billers,Billers,biller_name_paid_60_days,Biller Name Paid In The Past 60 Days,List[String],List of all billers customer has paid in the last 60 days
+Transactional,Billers,Billers,biller_name_paid_multiple_times_60_days,Biller Name Paid Multiple Times In The Past 60 Days,List[String],List of all billers customer has paid multiple times in the last 60 days
+Transactional,Billers,Billers,preferred_biller_name_90_days,Preferred Biller Name In The Past 90 Days,String,Most-paid biller last 90 days
+Transactional,Billers,Billers,biller_name_paid_90_days,Biller Name Paid In The Past 90 Days,List[String],List of all billers customer has paid in the last 90 days
+Transactional,Billers,Billers,biller_name_paid_multiple_times_90_days,Biller Name Paid Multiple Times In The Past 90 Days,List[String],List of all billers customer has paid multiple times in the last 90 days
+Transactional,Billers,Billers,preferred_biller_name_120_days,Preferred Biller Name In The Past 120 Days,String,Most-paid biller last 120 days
+Transactional,Billers,Billers,biller_name_paid_120_days,Biller Name Paid In The Past 120 Days,List[String],List of all billers customer has paid in the last 120 days
+Transactional,Billers,Billers,biller_name_paid_multiple_times_120_days,Biller Name Paid Multiple Times In The Past 120 Days,List[String],List of all billers customer has paid multiple times in the last 120 days
+Transactional,Billers,Billers,preferred_biller_name_150_days,Preferred Biller Name In The Past 150 Days,String,Most-paid biller last 150 days
+Transactional,Billers,Billers,biller_name_paid_150_days,Biller Name Paid In The Past 150 Days,List[String],List of all billers customer has paid in the last 150 days
+Transactional,Billers,Billers,biller_name_paid_multiple_times_150_days,Biller Name Paid Multiple Times In The Past 150 Days,List[String],List of all billers customer has paid multiple times in the last 150 days
+Transactional,Billers,Billers,preferred_biller_name_180_days,Preferred Biller Name In The Past 180 Days,String,Most-paid biller last 180 days
+Transactional,Billers,Billers,biller_name_paid_180_days,Biller Name Paid In The Past 180 Days,List[String],List of all billers customer has paid in the last 180 days
+Transactional,Billers,Billers,biller_name_paid_multiple_times_180_days,Biller Name Paid Multiple Times In The Past 180 Days,List[String],List of all billers customer has paid multiple times in the last 180 days
+Transactional,Billers,Billers,preferred_biller_name_730_days,Preferred Biller Name In The Past 2 Years,String,Most-paid biller last 2 years days
+Transactional,Billers,Billers,biller_name_paid_730_days,Biller Name Paid In The Past 2 Years,List[String],List of all billers customer has paid in the last 2 years days
+Transactional,Billers,Billers,biller_name_paid_multiple_times_730_days,Biller Name Paid Multiple Times In The Past 2 Years,List[String],List of all billers customer has paid multiple times in the last 2 years days
+Transactional,Billers,Billers,preferred_biller_category_name_30_days,Preferred Biller Category Name In The Past 30 Days,String,Most-paid biller category last 30 days
+Transactional,Billers,Billers,biller_category_name_paid_30_days,Biller Category Name Paid In The Past 30 Days,List[String],List of all biller categories customer has paid in the last 30 days
+Transactional,Billers,Billers,biller_category_name_paid_multiple_times_30_days,Biller Category Name Paid Multiple Times In The Past 30 Days,List[String],List of all biller categories customer has paid multiple times in the last 30 days
+Transactional,Billers,Billers,preferred_biller_category_name_60_days,Preferred Biller Category Name In The Past 60 Days,String,Most-paid biller category last 60 days
+Transactional,Billers,Billers,biller_category_name_paid_60_days,Biller Category Name Paid In The Past 60 Days,List[String],List of all biller categories customer has paid in the last 60 days
+Transactional,Billers,Billers,biller_category_name_paid_multiple_times_60_days,Biller Category Name Paid Multiple Times In The Past 60 Days,List[String],List of all biller categories customer has paid multiple times in the last 60 days
+Transactional,Billers,Billers,preferred_biller_category_name_90_days,Preferred Biller Category Name In The Past 90 Days,String,Most-paid biller category last 90 days
+Transactional,Billers,Billers,biller_category_name_paid_90_days,Biller Category Name Paid In The Past 90 Days,List[String],List of all biller categories customer has paid in the last 90 days
+Transactional,Billers,Billers,biller_category_name_paid_multiple_times_90_days,Biller Category Name Paid Multiple Times In The Past 90 Days,List[String],List of all biller categories customer has paid multiple times in the last 90 days
+Transactional,Billers,Billers,preferred_biller_category_name_120_days,Preferred Biller Category Name In The Past 120 Days,String,Most-paid biller category last 120 days
+Transactional,Billers,Billers,biller_category_name_paid_120_days,Biller Category Name Paid In The Past 120 Days,List[String],List of all biller categories customer has paid in the last 120 days
+Transactional,Billers,Billers,biller_category_name_paid_multiple_times_120_days,Biller Category Name Paid Multiple Times In The Past 120 Days,List[String],List of all biller categories customer has paid multiple times in the last 120 days
+Transactional,Billers,Billers,preferred_biller_category_name_150_days,Preferred Biller Category Name In The Past 150 Days,String,Most-paid biller category last 150 days
+Transactional,Billers,Billers,biller_category_name_paid_150_days,Biller Category Name Paid In The Past 150 Days,List[String],List of all biller categories customer has paid in the last 150 days
+Transactional,Billers,Billers,biller_category_name_paid_multiple_times_150_days,Biller Category Name Paid Multiple Times In The Past 150 Days,List[String],List of all biller categories customer has paid multiple times in the last 150 days
+Transactional,Billers,Billers,preferred_biller_category_name_180_days,Preferred Biller Category Name In The Past 180 Days,String,Most-paid biller category last 180 days
+Transactional,Billers,Billers,biller_category_name_paid_180_days,Biller Category Name Paid In The Past 180 Days,List[String],List of all biller categories customer has paid in the last 180 days
+Transactional,Billers,Billers,biller_category_name_paid_multiple_times_180_days,Biller Category Name Paid Multiple Times In The Past 180 Days,List[String],List of all biller categories customer has paid multiple times in the last 180 days
+Transactional,Billers,Billers,preferred_biller_category_name_730_days,Preferred Biller Category Name In The Past 2 Years,String,Most-paid biller category last 2 years days
+Transactional,Billers,Billers,biller_category_name_paid_730_days,Biller Category Name Paid In The Past 2 Years,List[String],List of all biller categories customer has paid in the last 2 years days
+Transactional,Billers,Billers,biller_category_name_paid_multiple_times_730_days,Biller Category Name Paid Multiple Times In The Past 2 Years,List[String],List of all biller categories customer has paid multiple times in the last 2 years days
+Transactional,All,All,total_created_orders,Total Created Orders,Long,Total number of orders created but not completed
+Transactional,Gift Cards,Gift Cards,gift_card_created_orders,Total Created Gift Card Orders,Long,Total number of gift card orders created but not completed
+Transactional,Billers,Billers,canadian_biller_created_orders,Total Created Canadian Biller Orders,Long,Total number of Canadian biller orders created but not completed
+Transactional,Billers,Billers,indian_biller_created_orders,Total Created Indian Biller Orders,Long,Total number of Indian biller orders created but not completed
+Transactional,All,All,total_failed_orders,Total Failed Orders,Long,Total number orders where order state = failed
+Transactional,Billers,Billers,created_orders_biller_name_0_days,Created Orders Biller Name 0 Days,String,Names of biller orders created where there is no order completed for same biller in last 0 day
+Transactional,Billers,Billers,exists_created_orders_biller_name_0_days,Exists Created Orders Biller Name 0 Days,Integer,If customer has created but not completed biller orders in last 0 day then 1 else 0
+Transactional,Billers,Billers,created_orders_biller_name_1_days,Created Orders Biller Name 1 Days,String,Names of biller orders created where there is no order completed for same biller in last 1 days
+Transactional,Billers,Billers,exists_created_orders_biller_name_1_days,Exists Created Orders Biller Name 1 Days,Integer,If customer has created but not completed biller orders in last 1 days then 1 else 0
+Transactional,Billers,Billers,created_orders_biller_name_2_days,Created Orders Biller Name 2 Days,String,Names of biller orders created where there is no order completed for same biller in last 2 days
+Transactional,Billers,Billers,exists_created_orders_biller_name_2_days,Exists Created Orders Biller Name 2 Days,Integer,If customer has created but not completed biller orders in last 2 days then 1 else 0
+Transactional,Gift Cards,Gift Cards,created_orders_gift_card_name_amount_0_days,Created Orders Gift Card Name Amount 0 Days,String,Names of gift card orders created where there is no order completed for same gift card in last 0 day
+Transactional,Gift Cards,Gift Cards,exists_created_orders_gift_card_name_amount_0_days,Exists Created Orders Gift Card Name Amount 0 Days,Integer,If customer has created but not completed biller orders in last 0 day then 1 else 0
+Transactional,Gift Cards,Gift Cards,created_orders_gift_card_name_amount_1_days,Created Orders Gift Card Name Amount 1 Days,String,Names of gift card orders created where there is no order completed for same gift card in last 1 day
+Transactional,Gift Cards,Gift Cards,exists_created_orders_gift_card_name_amount_1_days,Exists Created Orders Gift Card Name Amount 1 Days,Integer,If customer has created but not completed biller orders in last 1 day then 1 else 0
+Transactional,Gift Cards,Gift Cards,created_orders_gift_card_name_amount_2_days,Created Orders Gift Card Name Amount 2 Days,String,Names of gift card orders created where there is no order completed for same gift card in last 2 day
+Transactional,Gift Cards,Gift Cards,exists_created_orders_gift_card_name_amount_2_days,Exists Created Orders Gift Card Name Amount 2 Days,Integer,If customer has created but not completed biller orders in last 2 day then 1 else 0
+Behavioural,All,All,max_time_between_orders,Max Time Between Orders,Integer,Maximum number of days between any two orders
+Behavioural,Payments,Payments,added_credit_card,Added Credit Card,Integer,1 if customer has a credit card added as payment method 0 otherwise
+Behavioural,Payments,Payments,added_pad,Added Pad,Integer,1 if customer has a bank account added as payment method 0 otherwise
+Behavioural,Payments,Payments,added_visa,Added Visa,Integer,1 if customer has a visa added as payment method 0 otherwise
+Behavioural,Payments,Payments,added_mastercard,Added Mastercard,Integer,1 if customer has a mastercard added as payment method 0 otherwise
+Behavioural,Payments,Payments,added_american_express,Added American Express,Integer,1 if customer has an american express added as payment method 0 otherwise
+Behavioural,Payments,Payments,count_payment_methods_added,Count Payment Methods Added,Long,Total number of non-deleted payment methods added to account
+Behavioural,Payments,Payments,count_bank_accounts_added,Count Bank Accounts Added,Long,Total number of non-deleted bank accounts added to account
+Behavioural,Payments,Payments,count_credit_cards_added,Count Credit Cards Added,Long,Total number of non-deleted credit cards added to account
+Behavioural,Payments,Payments,bank_account_providers,Bank Account Providers,List[String],List of all non-deleted bank accounts added as payment methods
+Behavioural,Payments,Payments,types_of_credit_cards_added,Types Of Credit Cards Added,List[String],List of all non-deleted credit cards added as payment methods
+Behavioural,Payments,Payments,bank_link_attempted_providers,List of Banks Attempted to Link Unsuccessfully,String,List of all providers who were attempted to be linked in form of a string
+Behavioural,Payments,Payments,bank_link_attempted_last_7_days,Num of Days Unsuccessful Bank Link Attempted in Last 7 days,Integer,Num of days in last 7 days when a bank link was unsuccessfully attempted
+Behavioural,Payments,Payments,num_of_cc_expiring_next_month,Num of Expiring Credit Cards,Integer,Num of credit cards expiring next month
+Behavioural,Payments,Payments,cc_expiring_next_month,Last 4 Digits of Expiring Credit Cards,String,Comma seperated string of credit card last 4 digits
+Transactional,Billers,Billers,total_biller_cat_credit_card_orders,Total Biller Category Credit Card Orders,Long,Total bills paid in the credit cards biller category
+Transactional,Billers,Billers,total_biller_cat_education_orders,Total Biller Category Education Orders,Long,Total bills paid in the eduction biller category 
+Transactional,Billers,Billers,total_biller_cat_liabilities_orders,Total Biller Category Liabilities Orders,Long,Total bills paid in the liabilities biller category 
+Transactional,Billers,Billers,total_biller_cat_insurance_orders,Total Biller Category Insurance Orders,Long,Total bills paid in the insurance biller category
+Transactional,Billers,Billers,total_biller_cat_rent_orders,Total Biller Category Rent Orders,Long,Total bills paid in the rent biller category
+Transactional,Billers,Billers,total_biller_cat_loans_orders,Total Biller Category Loans Orders,Long,Total bills paid in the loans biller category
+Transactional,Billers,Billers,total_biller_cat_investments_orders,Total Biller Category Investments Orders,Long,Total bills paid in the investments biller category
+Transactional,Billers,Billers,total_biller_cat_internet_orders,Total Biller Category Internet Orders,Long,Total bills paid in the internet biller category
+Transactional,Billers,Billers,total_biller_cat_auto_orders,Total Biller Category Auto Orders,Long,Total bills paid in the auto biller category
+Transactional,Billers,Billers,total_biller_cat_utilties_orders,Total Biller Category Utilties Orders,Long,Total bills paid in the utilties biller category
+Transactional,Billers,Billers,total_biller_cat_cable_orders,Total Biller Category Cable Orders,Long,Total bills paid in the cable biller category
+Transactional,Billers,Billers,total_biller_cat_lifestyle_orders,Total Biller Category Lifestyle Orders,Long,Total bills paid in the lifestyle biller category
+Transactional,Billers,Billers,total_biller_cat_mobile_orders,Total Biller Category Mobile Orders,Long,Total bills paid in the mobile biller category
+Transactional,Billers,Billers,total_biller_cat_taxes_orders,Total Biller Category Taxes Orders,Long,Total bills paid in the taxes biller category
+Transactional,Billers,Billers,total_biller_cat_securities_orders,Total Biller Category Securities Orders,Long,Total bills paid in the securities biller category
+Transactional,All,All,loyalty_points,Loyalty Points,Long,Customer points score
+Behavioural,All,All,days_since_first_order,Days Since First Order,Integer,Number of days between today and when customer made their first order
+Behavioural,Billers,Billers,days_since_first_bill_order,Days Since First Bill Order,Integer,Number of days between today and when customer made their first bill order
+Behavioural,Gift Cards,Gift Cards,days_since_first_gc_order,Days Since First Gift Card Order,Integer,Number of days between today and when customer made their first gift card order
+Behavioural,All,All,days_since_last_order,Days Since Last Order,Integer,Days since most recent order
+Behavioural,All,All,days_to_first_order,Days To First Order,Integer,Number of days between when customer signed up and when they made their first order
+Behavioural,Payments,Payments,days_to_add_payment_method,Days To Add Payment Method,Integer,Number of days between when customer signed up and when they added a payment method
+Behavioural,All,All,avg_time_between_orders,Avg Time Between Orders,Double,Average number of days between orders = total days active / total orders
+Behavioural,Billers,Billers,avg_time_between_bill_orders,Avg Time Between Bill Orders,Double,Average number of days between bill orders = total days active / total bill orders
+Behavioural,Gift Cards,Gift Cards,avg_time_between_gc_orders,Avg Time Between Gift Card Orders,Double,Average number of days between gift card orders = total days active / total gift card orders
+Transactional,Payments,Payments,preferred_payment_type_orders,Preferred Payment Type Orders,String,Most used payment type for all types of orders
+Transactional,Payments,Payments,preferred_payment_type_dollars,Preferred Payment Type Dollars,String,Preferred payment type for orders in terms of dollars spent
+Behavioural,Wallet,Wallet,active_last_35_days,Active Last 35 Days,Integer,1 if customer made an order in the psat month 0 otherwise
+Profile,Profile,Profile,resurrected_user,Resurrected User,Integer,1 if a customer was previously dormant and now they're active 0 otherwise
+Profile,Profile,Profile,customer_segment,Customer Segment,String,Customer segment - signup / created / new_active / repeat / dormant / qualified / resurrected
+Email,Channel,Channel,latest_delivery_date,Latest Delivery Date,DateTime,When the customer last received a promo email
+Email,Channel,Channel,latest_open_date,Latest Open Date,DateTime,When the customer last opened a promo email
+Email,Channel,Channel,campaigns_opened_1_days,Campaigns Opened in 1 Day,Integer,Number of promo emails opened in the last day
+Email,Channel,Channel,campaigns_opened_7_days,Campaigns Opened in 7 Days,Integer,Number of promo emails opened in the last week
+Email,Channel,Channel,campaigns_opened_30_days,Campaigns Opened in 30 Days,Integer,Number of promo emails opened in the last month

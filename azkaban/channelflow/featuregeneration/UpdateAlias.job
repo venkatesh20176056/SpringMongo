@@ -1,0 +1,6 @@
+job.name=UpdateAlias
+
+
+type=command
+command=python ${baseDir}/bin/es_update_alias.py ${esNodes} ${oldIndex} ${index} ${esNumIndex} ${ESAlias}
+dependencies=ExportChannel

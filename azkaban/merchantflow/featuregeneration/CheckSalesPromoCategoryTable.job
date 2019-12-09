@@ -1,0 +1,7 @@
+job.name=CheckSalesPromoCategoryTable
+
+type=command
+featurePath="${rawTablePathS3}/baseTables/sales_promo_category"
+
+command=python ${baseDir}/bin/check_s3.py ${job.name} ${flowEnv} ${job.targetDate} ${featurePath} --partitioned="false"
+dependencies=UploadSpecs

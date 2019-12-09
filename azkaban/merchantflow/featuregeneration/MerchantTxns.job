@@ -1,0 +1,12 @@
+job.name=MerchantTxns
+job.class=com.paytm.map.features.merchant.SalesBaseJob
+
+type=command
+
+job.nExecutors=60
+job.executorMem=12g
+job.executorCores=4
+job.lookBackDays=40
+
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries} --optArgs "${job.lookBackDays}"
+dependencies=CheckPaymentsTableNewSTR,CheckPaymentsTableAliPay

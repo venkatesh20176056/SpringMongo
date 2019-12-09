@@ -1,0 +1,6 @@
+job.name=PushFeatureValues
+
+type=command
+
+command=python ${baseDir}/bin/update_possible_values.py ${job.targetDate} ${flowEnv} paytm-merchant-india
+dependencies=MerchantFeatureValue

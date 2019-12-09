@@ -1,0 +1,5 @@
+[
+  {"varName":"DEVICE_total_app_open_count","fun":"SUM","dType":"long","level":"DEVICE"},
+  {"varName":"DEVICE_last_app_open_date","fun":"MAX","dType":"date","level":"DEVICE"},
+  {"varName":"DEVICE_cell_network_provider","fun":"GETLAST","dType":"string","level":"DEVICE","partitionBy":"customer_id","orderBy":"dt"}
+]

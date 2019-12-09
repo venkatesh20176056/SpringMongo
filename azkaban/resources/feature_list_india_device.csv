@@ -1,0 +1,4 @@
+Class,Vertical,Category,Name,Alias,Datatype,Description,isEnable,ExecLevel,isExposed
+Device,Push,Push,customer_id,Push Device Id,String,Unique ID for each Paytm device,1,PUSHDEVICE,1
+Device,Push,Push,signup_date,Signup Date,Date,Date Customer Signed up,1,PUSHDEVICE,1
+Device,Push,Push,first_open_date,First Open Date,Date,Date app was first opened on device,1,PUSHDEVICE,1

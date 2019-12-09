@@ -1,0 +1,20 @@
+job.name=RelativeRecallMetric
+job.class=com.paytm.map.features.similarity.Evaluation.RelativeRecallMetric
+
+job.driverMem=10g
+job.nExecutors=15
+job.executorMem=10g
+job.executorCores=1
+
+scoreThreshold=0.7
+jobConf="--conf spark.executor.memoryOverhead=5000m --conf spark.network.timeout=720000s"
+
+
+# To be injected by lambda
+job.mainArgs="--execution_timestamp ${executionTimestamp} --segment_id ${segmentId} --param_combination_size ${param_combination_size}"
+
+type=command
+
+dependencies=EvalResultUsingPrecomputedHash
+
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries} --optCmd ${jobConf} --optArgs ${job.mainArgs}

@@ -1,0 +1,13 @@
+job.name=ChannelFeatures
+job.class=com.paytm.map.features.channel.ChannelFeatures
+
+type=command
+
+job.nExecutors=24
+job.executorMem=15g
+job.executorCores=2
+job.driverMem=8g
+job.memoryOverhead=4g
+
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries} --optCmds "--conf spark.yarn.executor.memoryOverhead=${job.memoryOverhead}" --optArgs "${job.lookBackDays}"
+dependencies=UploadSpecs

@@ -1,0 +1,11 @@
+job.name=STRMerchantTable
+job.class=com.paytm.map.features.base.DFCache
+
+job.driverMem=8g
+job.nExecutors=50
+job.executorMem=12g
+job.executorCores=4
+
+type=command
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries} --optArgs "${job.lookBackDays} STRMerchantTable"
+dependencies=SalesPromoRechTable

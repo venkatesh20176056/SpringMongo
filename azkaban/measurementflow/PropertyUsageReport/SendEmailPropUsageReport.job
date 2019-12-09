@@ -1,0 +1,5 @@
+job.name=SendEmailPropUsageReport
+
+type=command
+
+command=python -u ${baseDir}/bin/daily_propertyusage_report.py ${job.targetDate} 0 ${flowEnv} ${DPR_report_path} ${DPR_email_from} ${DPR_email_to} ${DPR_email_subject} ${DPR_email_CC}

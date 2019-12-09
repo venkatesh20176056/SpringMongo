@@ -1,0 +1,8 @@
+job.name=SuperUserRelations
+job.class=com.paytm.map.featuresplus.superuserid.Relations
+
+
+dependencies=SuperUserBaseTable
+type=command
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors80} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries}
+

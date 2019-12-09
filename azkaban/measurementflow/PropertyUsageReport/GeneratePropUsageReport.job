@@ -1,0 +1,7 @@
+job.name=GeneratePropUsageReport
+job.class=com.paytm.map.features.measurements.GeneratePropertyUsageReport
+
+job.lookBackDays=60
+
+type=command
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries} --optArgs "${job.lookBackDays}"

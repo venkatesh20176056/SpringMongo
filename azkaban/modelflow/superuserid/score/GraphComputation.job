@@ -1,0 +1,7 @@
+job.name=SuperUserGraphComputeEngine
+job.class=com.paytm.map.featuresplus.superuserid.GraphComputation
+
+dependencies=Modelling
+type=command
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors80} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries}
+

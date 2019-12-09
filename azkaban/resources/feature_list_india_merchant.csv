@@ -1,0 +1,138 @@
+Class,Vertical,Category,Name,Alias,Datatype,Description,isEnable,ExecLevel,isExposed
+Profile,Profile,Profile,merchant_id,Merchant Id,String,Merchant id,1,PROFILE,1
+Profile,Profile,Profile,city,City,String,City where merchant lives,1,PROFILE,1
+Profile,Profile,Profile,state,State,String,State where merchant lives,1,PROFILE,1
+Profile,Profile,Profile,mid_type,Type by Wallet Limit,String,Type by Wallet Limit,1,PROFILE,1
+Profile,Profile,Profile,agent_type,Agent Type,String,Channel,1,PROFILE,1
+Profile,Profile,Profile,debit_card_issue,Debit Card Issue Date,Date,Date Debit Card was Issued,1,PROFILE,1
+Profile,Profile,Profile,acct_opn_date,Account Open Date,Date,Date account was opened,1,PROFILE,1
+Profile,Profile,Profile,migrated_to_offline_pg,Migrated to Offline,Long,Migrated to Offline,1,PROFILE,1
+Profile,Profile,Profile,isAggregator,Is Aggregator,String,Is Aggregator Merchant Id Flag,1,PROFILE,1
+Profile,Profile,Profile,aggregator_mid,Aggregator Merchant Id,String,Aggregator Merchant Id,1,PROFILE,1
+Profile,Profile,Profile,isChild,Is Child Flag,String,Is Child Flag,1,PROFILE,1
+Profile,Profile,Profile,child_mids,Child Merchant Ids,List[String],List of Child Merchant Ids,1,PROFILE,1
+Profile,Profile,Profile,phone_no,Primary Contact Phone Number,String,Merchant's Primary Contact Number,1,PROFILE,1
+Profile,Profile,Profile,secondary_contact_number,Secondary Contact Phone Number,String,Merchant's Secondary Contact Number,1,PROFILE,1
+Profile,Profile,Profile,signup_date,Sign up Date,Date,Merchant Sign up date,1,PROFILE,1
+Profile,Profile,Profile,category,Merchant Category,String,Merchant Category,1,PROFILE,1
+Profile,Profile,Profile,sub_category,Merchant Sub Category,String,Merchant Sub Category,1,PROFILE,1
+Profile,Profile,Profile,cleaned_city,Cleaned City,String,Cleaned version of city where merchant lives,1,PROFILE,1
+Profile,Profile,Profile,cleaned_state,Cleaned State,String,Cleaned version of state where merchant lives,1,PROFILE,1
+Profile,Profile,Profile,pincode,PIN Code,String,PIN Code of the merchant,1,PROFILE,1
+Profile,Profile,Profile,cc_abuser,Credit Card Abuser,Int,Flag to tell if merchant is Credit Card Abuser,1,PROFILE,1
+Profile,Profile,Profile,cashback_abuser,Cashback Abuser,Int,Flag to tell if merchant is Cashback abuser,1,PROFILE,1
+Profile,Profile,EDC,edc_mapped,EDC mapped,String,Flag to tell if merchant has EDC mapped,1,PROFILE,1
+Profile,Profile,EDC,edc_last_device_mapped_date,EDC last device mapped date,Date,EDC Last device mapped date,1,PROFILE,1
+Profile,Profile,EDC,edc_rejected_reason,EDC Rejected Reason,Nested,EDC QC rejected reason,1,PROFILE,1
+Profile,Profile,EDC,edc_rejected_reason.rejected_field_reason,EDC Rejected Reason,String,EDC QC rejected reason,1,NESTED,1
+Profile,Profile,EDC,edc_rejected_reason.doc_type,EDC Rejected Reason,String,EDC QC rejected reason,1,NESTED,1
+Profile,Profile,EDC,edc_rental_plan,EDC Rental Plan,String,EDC Rental Plan,1,PROFILE,1
+Profile,Profile,EDC,edc_rental_amount,EDC Rental Double,Double,EDC Rental Amount,1,PROFILE,1
+Profile,Profile,Profile,installed_apps_list,Apps installed in merchant's device,List[String],Apps installed in merchant's device,1,PROFILE,1
+Profile,Profile,Profile,is_self_declared,Whether the merchant is self declared,Int,Flag to tell if merchant is self declared,1,PROFILE,1
+Transactional,P2M,Overall,p2m_overall_total_transaction_count,Total Transaction Count,Long,Count of Total Transactions,1,MS,1
+Transactional,P2M,Overall,p2m_overall_total_transaction_count_1_calendar_months,Total Transaction Count in Current Month,Long,Count of Total Transactions Last 1 Calendar Months,1,MS,1
+Transactional,P2M,Overall,p2m_overall_total_transaction_count_3_calendar_months,Total Transaction Count Last 3 Calendar Months,Long,Count of Total Transactions Last 3 Calendar Months,1,MS,1
+Transactional,P2M,Overall,p2m_overall_total_transaction_count_6_calendar_months,Total Transaction Count Last 6 Calendar Months,Long,Count of Total Transactions Last 6 Calendar Months,1,MS,1
+Transactional,P2M,Overall,p2m_overall_total_transaction_count_12_calendar_months,Total Transaction Count Last 12 Calendar Months,Long,Count of Total Transactions Last 12 Calendar Months,1,MS,1
+Transactional,P2M,Overall,p2m_overall_total_transaction_count_last_month,Total Transaction Count in Last Month,Long,Count of Total Transactions Last Calendar Month,1,MS,1
+Transactional,P2M,Overall,p2m_overall_total_transaction_count_second_last_month,Total Transaction Count in Second Last Month,Long,Count of Total Transactions Second Last Calendar Months,1,MS,1
+Transactional,P2M,Overall,p2m_overall_total_transaction_size,Total Transaction Amount,Double,Total transaction amount,1,MS,1
+Transactional,P2M,Overall,p2m_overall_total_transaction_size_1_calendar_months,Total Transaction Amount in Current Month,Double,Total Transaction Amount Last 1 Calendar Months,1,MS,1
+Transactional,P2M,Overall,p2m_overall_total_transaction_size_3_calendar_months,Total Transaction Amount Last 3 Calendar Months,Double,Total Transaction Amount Last 3 Calendar Months,1,MS,1
+Transactional,P2M,Overall,p2m_overall_total_transaction_size_6_calendar_months,Total Transaction Amount Last 6 Calendar Months,Double,Total Transaction Amount Last 6 Calendar Months,1,MS,1
+Transactional,P2M,Overall,p2m_overall_total_transaction_size_12_calendar_months,Total Transaction Amount Last 12 Calendar Months,Double,Total Transaction Amount Last 12 Calendar Months,1,MS,1
+Transactional,P2M,Overall,p2m_overall_total_transaction_size_last_month,Total Transaction Amount in Last Month,Double,Total Transaction Amount Previous Calendar Months,1,MS,1
+Transactional,P2M,Overall,p2m_overall_total_transaction_size_second_last_month,Total Transaction Amount in Second Last Month,Double,Total Transaction Second Last Calendar Month,1,MS,1
+Transactional,P2M,Overall,p2m_overall_unique_day_count,Count of Days with Transaction,Long,Count of Days where a transaction was performed,1,MS,1
+Transactional,P2M,Overall,p2m_overall_unique_day_count_1_calendar_months,Count of Days with Transaction in Current Month,Long,Count of Days where a transaction was performed in last 1 calendar months,1,MS,1
+Transactional,P2M,Overall,p2m_overall_unique_day_count_3_calendar_months,Count of Days with Transaction Last 3 Calendar Months,Long,Count of Days where a transaction was performed in last 3 calendar months,1,MS,1
+Transactional,P2M,Overall,p2m_overall_unique_day_count_6_calendar_months,Count of Days with Transaction Last 6 Calendar Months,Long,Count of Days where a transaction was performed in last 6 calendar months,1,MS,1
+Transactional,P2M,Overall,p2m_overall_unique_day_count_12_calendar_months,Count of Days with Transaction Last 12 Calendar Months,Long,Count of Days where a transaction was performed in last 12 calendar months,1,MS,1
+Transactional,P2M,Overall,p2m_overall_unique_day_count_last_month,Count of Days with Transaction in Last Month,Long,Count of Days where a transaction was performed in previous calendar months,1,MS,1
+Transactional,P2M,Overall,p2m_overall_unique_day_count_second_last_month,Count of Days with Transaction in Second Last Month,Long,Count of Days where a transaction was performed in second last calendar months,1,MS,1
+Transactional,P2M,Overall,p2m_overall_unique_customer_count,Unique Customer Count,Long,TestTest,1,MS,1
+Transactional,P2M,Overall,p2m_overall_unique_customer_count_1_calendar_months,Unique Customer Count in Current Month,Long,Count of Unique Customers in last 1 calendar months,1,MS,1
+Transactional,P2M,Overall,p2m_overall_unique_customer_count_3_calendar_months,Unique Customer Count in Last 3 Calendar Months,Long,Count of Unique Customers in last 3 calendar months,1,MS,1
+Transactional,P2M,Overall,p2m_overall_unique_customer_count_6_calendar_months,Unique Customer Count in Last 6 Calendar Months,Long,Count of Unique Customers in last 6 calendar months,1,MS,1
+Transactional,P2M,Overall,p2m_overall_unique_customer_count_12_calendar_months,Unique Customer Count in Last 12 Calendar Months,Long,Count of Unique Customers in last 12 calendar months,1,MS,1
+Transactional,P2M,Overall,p2m_overall_unique_customer_count_last_month,Unique Customer Count in Last Month,Long,Count of Unique Customers in previous calendar month,1,MS,1
+Transactional,P2M,Overall,p2m_overall_unique_customer_count_second_last_month,Unique Customer Count in Second Last Month,Long,Count of Unique Customers in second last calendar months,1,MS,1
+Transactional,P2M,Overall,p2m_overall_last_transaction_date,Last Transaction Date,Date,Last transaction date,1,MS,1
+Transactional,P2M,UPI,p2m_upi_total_transaction_count,Total Transaction Count,Long,Count of Total Transactions,1,MS,1
+Transactional,P2M,UPI,p2m_upi_total_transaction_count_1_calendar_months,Total Transaction Count in Current Month,Long,Count of Total Transactions Last 1 Calendar Months,1,MS,1
+Transactional,P2M,UPI,p2m_upi_total_transaction_count_3_calendar_months,Total Transaction Count Last 3 Calendar Months,Long,Count of Total Transactions Last 3 Calendar Months,1,MS,1
+Transactional,P2M,UPI,p2m_upi_total_transaction_count_6_calendar_months,Total Transaction Count Last 6 Calendar Months,Long,Count of Total Transactions Last 6 Calendar Months,1,MS,1
+Transactional,P2M,UPI,p2m_upi_total_transaction_count_12_calendar_months,Total Transaction Count Last 12 Calendar Months,Long,Count of Total Transactions Last 12 Calendar Months,1,MS,1
+Transactional,P2M,UPI,p2m_upi_total_transaction_count_last_month,Total Transaction Count in Last Month,Long,Count of Total Transactions Previous Month,1,MS,1
+Transactional,P2M,UPI,p2m_upi_total_transaction_count_second_last_month,Total Transaction Count in Second Last Month,Long,Count of Total Transactions Second Last Month,1,MS,1
+Transactional,P2M,UPI,p2m_upi_total_transaction_size,Total Transaction Amount,Double,Total transaction amount,1,MS,1
+Transactional,P2M,UPI,p2m_upi_total_transaction_size_1_calendar_months,Total Transaction Amount in Current Month,Double,Total Transaction Amount Last 1 Calendar Months,1,MS,1
+Transactional,P2M,UPI,p2m_upi_total_transaction_size_3_calendar_months,Total Transaction Amount Last 3 Calendar Months,Double,Total Transaction Amount Last 3 Calendar Months,1,MS,1
+Transactional,P2M,UPI,p2m_upi_total_transaction_size_6_calendar_months,Total Transaction Amount Last 6 Calendar Months,Double,Total Transaction Amount Last 6 Calendar Months,1,MS,1
+Transactional,P2M,UPI,p2m_upi_total_transaction_size_12_calendar_months,Total Transaction Amount Last 12 Calendar Months,Double,Total Transaction Amount Last 12 Calendar Months,1,MS,1
+Transactional,P2M,UPI,p2m_upi_total_transaction_size_last_month,Total Transaction Amount in Last Month,Double,Total Transaction Amount Previous Calendar Month,1,MS,1
+Transactional,P2M,UPI,p2m_upi_total_transaction_size_second_last_month,Total Transaction in Second Last Month,Double,Total Transaction Amount Second Last Calendar Month,1,MS,1
+Transactional,P2M,UPI,p2m_upi_unique_day_count,Count of Days with Transaction,Long,Count of Days where a transaction was performed,1,MS,1
+Transactional,P2M,UPI,p2m_upi_unique_day_count_1_calendar_months,Count of Days with Transaction in Current Month,Long,Count of Days where a transaction was performed in last 1 calendar months,1,MS,1
+Transactional,P2M,UPI,p2m_upi_unique_day_count_3_calendar_months,Count of Days with Transaction Last 3 Calendar Months,Long,Count of Days where a transaction was performed in last 3 calendar months,1,MS,1
+Transactional,P2M,UPI,p2m_upi_unique_day_count_6_calendar_months,Count of Days with Transaction Last 6 Calendar Months,Long,Count of Days where a transaction was performed in last 6 calendar months,1,MS,1
+Transactional,P2M,UPI,p2m_upi_unique_day_count_12_calendar_months,Count of Days with Transaction Last 12 Calendar Months,Long,Count of Days where a transaction was performed in last 12 calendar months,1,MS,1
+Transactional,P2M,UPI,p2m_upi_unique_day_count_last_month,Count of Days with Transaction in Last Month,Long,Count of Days where a transaction was performed in previous calendar month,1,MS,1
+Transactional,P2M,UPI,p2m_upi_unique_day_count_second_last_month,Count of Days with Transaction in Second Last Month,Long,Count of Days where a transaction was performed in second last calendar month,1,MS,1
+Transactional,P2M,UPI,p2m_upi_unique_customer_count,Unique Customer Count,Long,TestTest,1,MS,1
+Transactional,P2M,UPI,p2m_upi_unique_customer_count_1_calendar_months,Unique Customer Count in Current Month,Long,Count of Unique Customers in last 1 calendar months,1,MS,1
+Transactional,P2M,UPI,p2m_upi_unique_customer_count_3_calendar_months,Unique Customer Count in Last 3 Calendar Months,Long,Count of Unique Customers in last 3 calendar months,1,MS,1
+Transactional,P2M,UPI,p2m_upi_unique_customer_count_6_calendar_months,Unique Customer Count in Last 6 Calendar Months,Long,Count of Unique Customers in last 6 calendar months,1,MS,1
+Transactional,P2M,UPI,p2m_upi_unique_customer_count_12_calendar_months,Unique Customer Count in Last 12 calendar months,Long,Count of Unique Customers in last 12 calendar months,1,MS,1
+Transactional,P2M,UPI,p2m_upi_unique_customer_count_last_month,Unique Customer Count in Last Month,Long,Count of Unique Customers in previous calendar month,1,MS,1
+Transactional,P2M,UPI,p2m_upi_unique_customer_count_second_last_month,Unique Customer Count in Second Last Month,Long,Count of Unique Customers in second last calendar month,1,MS,1
+Transactional,P2M,UPI,p2m_upi_last_transaction_date,Last Transaction Date,Date,Last transaction date,1,MS,1
+Transactional,P2M,Netbanking,p2m_netbanking_total_transaction_count,Total Transaction Count,Long,Count of Total Transactions,1,MS,1
+Transactional,P2M,Netbanking,p2m_netbanking_total_transaction_count_1_calendar_months,Total Transaction Count in Current Month,Long,Count of Total Transactions Last 1 Calendar Months,1,MS,1
+Transactional,P2M,Netbanking,p2m_netbanking_total_transaction_count_3_calendar_months,Total Transaction Count Last 3 Calendar Months,Long,Count of Total Transactions Last 3 Calendar Months,1,MS,1
+Transactional,P2M,Netbanking,p2m_netbanking_total_transaction_count_6_calendar_months,Total Transaction Count Last 6 Calendar Months,Long,Count of Total Transactions Last 6 Calendar Months,1,MS,1
+Transactional,P2M,Netbanking,p2m_netbanking_total_transaction_count_12_calendar_months,Total Transaction Count Last 12 Calendar Months,Long,Count of Total Transactions Last 12 Calendar Months,1,MS,1
+Transactional,P2M,Netbanking,p2m_netbanking_total_transaction_count_last_month,Total Transaction Count in Last Month,Long,Count of Total Transactions Previous Calendar Month,1,MS,1
+Transactional,P2M,Netbanking,p2m_netbanking_total_transaction_count_second_last_month,Total Transaction Count in Second Last Month,Long,Count of Total Transactions second last Calendar Month,1,MS,1
+Transactional,P2M,Netbanking,p2m_netbanking_total_transaction_size,Total Transaction Amount,Double,Total transaction amount,1,MS,1
+Transactional,P2M,Netbanking,p2m_netbanking_total_transaction_size_1_calendar_months,Total Transaction Amount in Current Month,Double,Total Transaction Amount Last 1 Calendar Months,1,MS,1
+Transactional,P2M,Netbanking,p2m_netbanking_total_transaction_size_3_calendar_months,Total Transaction Amount Last 3 Calendar Months,Double,Total Transaction Amount Last 3 Calendar Months,1,MS,1
+Transactional,P2M,Netbanking,p2m_netbanking_total_transaction_size_6_calendar_months,Total Transaction Amount Last 6 Calendar Months,Double,Total Transaction Amount Last 6 Calendar Months,1,MS,1
+Transactional,P2M,Netbanking,p2m_netbanking_total_transaction_size_12_calendar_months,Total Transaction Amount Last 12 Calendar Months,Double,Total Transaction Amount Last 12 Calendar Months,1,MS,1
+Transactional,P2M,Netbanking,p2m_netbanking_total_transaction_size_last_month,Total Transaction Amount in Last Month,Double,Total Transaction Amount Previous Calendar Month,1,MS,1
+Transactional,P2M,Netbanking,p2m_netbanking_total_transaction_size_second_last_month,Total Transaction Amount in Second Last Month,Double,Total Transaction Amount Second Last Calendar Month,1,MS,1
+Transactional,P2M,Netbanking,p2m_netbanking_unique_day_count,Count of Days with Transaction,Long,Count of Days where a transaction was performed,1,MS,1
+Transactional,P2M,Netbanking,p2m_netbanking_unique_day_count_1_calendar_months,Count of Days with Transaction in Current Month,Long,Count of Days where a transaction was performed in last 1 calendar months,1,MS,1
+Transactional,P2M,Netbanking,p2m_netbanking_unique_day_count_3_calendar_months,Count of Days with Transaction Last 3 Calendar Months,Long,Count of Days where a transaction was performed in last 3 calendar months,1,MS,1
+Transactional,P2M,Netbanking,p2m_netbanking_unique_day_count_6_calendar_months,Count of Days with Transaction Last 6 Calendar Months,Long,Count of Days where a transaction was performed in last 6 calendar months,1,MS,1
+Transactional,P2M,Netbanking,p2m_netbanking_unique_day_count_12_calendar_months,Count of Days with Transaction Last 12 Calendar Months,Long,Count of Days where a transaction was performed in last 12 calendar months,1,MS,1
+Transactional,P2M,Netbanking,p2m_netbanking_unique_day_count_last_month,Count of Days with Transaction in Last Month,Long,Count of Days where a transaction was performed in previous calendar month,1,MS,1
+Transactional,P2M,Netbanking,p2m_netbanking_unique_day_count_second_last_month,Count of Days with Transaction in Second Last Month,Long,Count of Days where a transaction was performed in second last calendar months,1,MS,1
+Transactional,P2M,Netbanking,p2m_netbanking_unique_customer_count,Unique Customer Count,Long,TestTest,1,MS,1
+Transactional,P2M,Netbanking,p2m_netbanking_unique_customer_count_1_calendar_months,Unique Customer Count in Current Month,Long,Count of Unique Customers in last 1 calendar months,1,MS,1
+Transactional,P2M,Netbanking,p2m_netbanking_unique_customer_count_3_calendar_months,Unique Customer Count in Last 3 Calendar Months,Long,Count of Unique Customers in last 3 calendar months,1,MS,1
+Transactional,P2M,Netbanking,p2m_netbanking_unique_customer_count_6_calendar_months,Unique Customer Count in Last 6 Calendar Months,Long,Count of Unique Customers in last 6 calendar months,1,MS,1
+Transactional,P2M,Netbanking,p2m_netbanking_unique_customer_count_12_calendar_months,Unique Customer Count in Last 12 Calendar Months,Long,Count of Unique Customers in last 12 calendar months,1,MS,1
+Transactional,P2M,Netbanking,p2m_netbanking_unique_customer_count_last_month,Unique Customer Count in Last Month,Long,Count of Unique Customers in previous calendar month,1,MS,1
+Transactional,P2M,Netbanking,p2m_netbanking_unique_customer_count_second_last_month,Unique Customer Count in Second Last Month,Long,Count of Unique Customers in second last calendar month,1,MS,1
+Transactional,P2M,Netbanking,p2m_netbanking_last_transaction_date,Last Transaction Date,Date,Last transaction date,1,MS,1
+Transactional,P2M,P2P,p2m_p2p_total_transaction_count_last_month,Total Count of payments accepted thru P2P in Last Month,Long,Count of Total payments thru P2P in Previous Calendar Month,1,MS,1
+Transactional,P2M,MIDP,p2m_midp_total_transaction_count_last_month,Total Count of payments accepted thru QR in Last Month,Long,Count of Total payments thru QR in Previous Calendar Month,1,MS,1
+Transactional,P2M,EDC,p2m_edc_total_transaction_count_60_days,Total Count of ECC payments in Last 60 days,Long,Count of EDC payments in last 60 days,1,MS,1
+Transactional,P2M,EDC,p2m_edc_total_transaction_size_60_days,Total Transaction Size of ECC payments in Last 60 days,Double,Amount of all EDC payments in last 60 days,1,MS,1
+Transactional,P2M,EDC,p2m_edc_total_transaction_size_30_days,Total Transaction Size of ECC payments in Last 30 days,Double,Amount of all EDC payments in last 30 days,1,MS,1
+Transactional,P2M,EDC,p2m_edc_total_transaction_size_1_calendar_months,Total Transaction Size of ECC payments in Current Calendar Month,Double,Amount of all EDC payments in current calendar month,1,MS,1
+Transactional,Bookings,All,BK_total_transaction_count_last_month,Total Transaction Count in last month,Long,Count of all transactions done by customer in last month,0,ML2,0
+Transactional,Bookings,All,BK_total_transaction_size_last_month,Total Transaction Size in last month,Double,Amount of all transactions done by customer in last month,0,ML2,0
+Transactional,Recharge and Utilities,All,RU_total_transaction_count_last_month,Total Transaction Count in last month,Long,Count of all transactions done by customer in last month,0,ML2,0
+Transactional,Recharge and Utilities,All,RU_total_transaction_size_last_month,Total Transaction Size in last month,Double,Amount of all transactions done by customer in last month,0,ML2,0
+Transactional,Ecommerce,All,EC_total_transaction_count_last_month,Total Transaction Count in last month,Long,Count of all transactions done by customer in last month,0,ML2,0
+Transactional,Ecommerce,All,EC_total_transaction_size_last_month,Total Transaction Size in last month,Double,Amount of all transactions done by customer in last month,0,ML2,0
+Transactional,Promo,Supercashback,SCB_supercash_status,Supercashback status,Nested,List of supercashback campaigns and their status,1,MSC,1
+Transactional,Promo,Supercashback,SCB_supercash_status.campaign_id,Supercashback status,Integer,Campaign ID,1,NESTED,1
+Transactional,Promo,Supercashback,SCB_supercash_status.last_updated_status,Supercashback status,String,Campaign last status,1,NESTED,1
+Transactional,Promo,Supercashback,SCB_supercash_status.successful_transaction_count,Supercashback status,Long,Campaign successful txn count,1,NESTED,1
+Behavioural,PAYTM,All,MGA_total_pdp_sessions_app_last_month,Total Views Count on App in last month,Long,Count of all views done by merchant on App last month,1,MGA,1
+Behavioural,PAYTM,All,MGA_total_pdp_sessions_web_last_month,Total Views Count on Web in last month,Long,Count of all views done by merchant on Website last month,1,MGA,1
+Behavioural,PAYTM,All,MGA_last_seen_all_date,Date merchant was last seen on Paytm Ecosystem,Date,Date merchant was last seen on Paytm Ecosystem,1,MGA,1

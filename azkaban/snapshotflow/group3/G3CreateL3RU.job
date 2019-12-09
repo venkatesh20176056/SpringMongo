@@ -1,0 +1,15 @@
+job.name=G3CreateL3RU
+job.class=com.paytm.map.features.Chakki.CreateDataSet
+
+job.nExecutors=180
+job.executorMem=5g
+job.memoryOverhead=1g
+job.executorCores=2
+
+type=command
+levelPrefix=L3RU
+cacheTo=s3
+mergeBaseTableSchema=true
+
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries} --optCmds "--conf spark.sql.shuffle.partitions=5000 --conf spark.yarn.executor.memoryOverhead=${job.memoryOverhead} --conf spark.eventLog.enabled=true --conf spark.eventLog.dir=hdfs:///var/log/spark/apps --conf spark.memory.fraction=0.8" --optArgs "${levelPrefix} ${groupPrefix} ${cacheTo} ${mergeBaseTableSchema}"
+dependencies=G3CheckL3RUAggregates

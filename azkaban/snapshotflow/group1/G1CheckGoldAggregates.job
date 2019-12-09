@@ -1,0 +1,6 @@
+job.name=G1CheckGoldAggregates
+
+type=command
+featurePath="${rawTablePathS3}/aggregates/GoldFeatures"
+command=python ${baseDir}/bin/check_s3.py ${job.name} ${flowEnv} ${job.targetDate} ${featurePath} --dateFormat "%Y-%m-%d" --dateSeparator "/dt="
+dependencies=G1CreateL3EC1

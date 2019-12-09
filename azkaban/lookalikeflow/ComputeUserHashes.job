@@ -1,0 +1,17 @@
+job.name=ComputeUserHashes
+job.class=com.paytm.map.features.similarity.Model.ComputeUserHashes
+
+job.driverMem=8g
+job.nExecutors=30
+job.executorMem=16g
+job.executorCores=4
+concatN=5
+
+jobConf="--conf spark.executor.memoryOverhead=9000m --conf spark.network.timeout=720000s"
+
+
+# To be injected by lambda
+job.mainArgs="--concat_n ${concatN}"
+type=command
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries} --optCmd ${jobConf} --optArgs ${job.mainArgs}
+dependencies=CheckAffinityFeatureS3

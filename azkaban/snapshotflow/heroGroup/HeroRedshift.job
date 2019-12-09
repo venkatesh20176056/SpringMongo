@@ -1,0 +1,11 @@
+job.name=HeroRedshift
+job.class= com.paytm.map.features.datasets.hero.WriteRedshift
+type=command
+
+job.driverMem=4g
+job.nExecutors=5
+job.executorMem=8g
+job.executorCores=1
+
+groupPrefix="hero"
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries} --optArgs "${groupPrefix}"

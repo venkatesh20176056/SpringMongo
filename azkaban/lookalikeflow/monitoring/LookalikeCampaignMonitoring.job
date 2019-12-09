@@ -1,0 +1,4 @@
+job.name=LookalikeCampaignMonitoring
+
+type=command
+command=python3 ${baseDir}/bin/lookalike_campaign_monitoring.py --cma_url ${cma_url} --bucket ${midgarBucket} --path ${lookalikeMonitoringPathS3}

@@ -1,0 +1,14 @@
+job.name=G1CreateL3BK
+job.class=com.paytm.map.features.Chakki.CreateDataSet
+
+job.nExecutors=180
+job.executorMem=5g
+job.executorCores=2
+job.memoryOverhead=1g
+
+type=command
+levelPrefix=L3BK
+mergeBaseTableSchema=true
+cacheTo=s3
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries} --optCmds "--conf spark.sql.shuffle.partitions=5000 --conf spark.yarn.executor.memoryOverhead=${job.memoryOverhead} --conf spark.memory.fraction=0.8 --conf spark.eventLog.enabled=true --conf spark.eventLog.dir=hdfs:///var/log/spark/apps" --optArgs "${levelPrefix} ${groupPrefix} ${cacheTo} ${mergeBaseTableSchema}"
+dependencies=G1CheckL3BKAggregates

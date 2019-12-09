@@ -1,0 +1,6 @@
+type=command
+retries=3
+
+command=python3 ${baseDir}/bin/glue_crawler_job.py ${flowEnv} service-role/AWSGlueServiceRole-alpha daily_flatfeatures 4 ${job.targetDate}
+
+dependencies=G4CheckFlatTable

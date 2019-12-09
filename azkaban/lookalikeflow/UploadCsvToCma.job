@@ -1,0 +1,6 @@
+job.name=UploadCsvToCma
+
+
+type=command
+dependencies=ComputeSimilarUsers
+command=python3 ${baseDir}/bin/upload_csv_from_s3_to_cma.py --url ${cmaurl} --bucket ${bucket} --segment ${segmentId} --timestamp ${executionTimestamp} --env ${flowEnv} --jobname ${job.name}

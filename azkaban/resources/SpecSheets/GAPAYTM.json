@@ -1,0 +1,8 @@
+[
+  {"varName":"PAYTM_total_product_views_web","fun":"SUM","dType":"long","level":"GAPAYTM","baseColumn":"L1GA_total_product_views_web"},
+  {"varName":"PAYTM_total_product_views_app","fun":"SUM","dType":"long","level":"GAPAYTM","baseColumn":"L1GA_total_product_views_app"},
+  {"varName":"PAYTM_total_product_clicks_web","fun":"SUM","dType":"long","level":"GAPAYTM","baseColumn":"L1GA_total_product_clicks_web"},
+  {"varName":"PAYTM_total_product_clicks_app","fun":"SUM","dType":"long","level":"GAPAYTM","baseColumn":"L1GA_total_product_clicks_app"},
+  {"varName":"PAYTM_total_pdp_sessions_web","fun":"SUM","dType":"long","level":"GAPAYTM","baseColumn":"L1GA_total_pdp_sessions_web"},
+  {"varName":"PAYTM_total_pdp_sessions_app","fun":"SUM","dType":"long","level":"GAPAYTM","baseColumn":"L1GA_total_pdp_sessions_app"}
+]

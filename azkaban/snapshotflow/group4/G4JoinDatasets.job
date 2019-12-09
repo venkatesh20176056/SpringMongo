@@ -1,0 +1,12 @@
+job.name=JoinDatasets
+job.class=com.paytm.map.features.Chakki.JoinDatasets
+
+job.nExecutors=60
+job.executorMem=16g
+job.executorCores=2
+job.memoryOverhead=4g
+job.driverMem=12g
+
+type=command
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries} --optCmds "--conf spark.yarn.executor.memoryOverhead=${job.memoryOverhead}" --optArgs "${groupPrefix} "
+dependencies=G4CheckInputG1FlatTable

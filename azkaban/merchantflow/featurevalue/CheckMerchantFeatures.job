@@ -1,0 +1,5 @@
+job.name=CheckMerchantFeatures
+
+type=command
+featurePath="${featureRootKeyPrefix}/merchantFlatTable"
+command=python ${baseDir}/bin/check_s3.py ${job.name} ${flowEnv} ${job.targetDate} ${featurePath} --dateFormat "%Y-%m-%d" --dateSeparator "/dt=" --timeout 14400

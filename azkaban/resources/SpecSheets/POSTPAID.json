@@ -1,0 +1,7 @@
+[
+  {"varName":"POSTPAID_top_scan_pay_out_mid","fun":"POSTPAID_TOP_MERCHANT","dType":"string","level":"POSTPAID","groupBy":"display_name","maxBy":"scan_pay_out","baseColumn":"POSTPAID_merch_struct"},
+  {"varName":"POSTPAID_top_totp_out_mid","fun":"POSTPAID_TOP_MERCHANT","dType":"string","level":"POSTPAID","groupBy":"display_name","maxBy":"totp_out","baseColumn":"POSTPAID_merch_struct"},
+  {"varName":"POSTPAID_defers","fun":"SUM","dType":"long","level":"POSTPAID"},
+  {"varName":"POSTPAID_pg_drop_off_count","fun":"SUM","dType":"long","level":"POSTPAID"},
+  {"varName":"POSTPAID_late_fee_amount","fun":"SUM","dType":"double","level":"POSTPAID"}
+]

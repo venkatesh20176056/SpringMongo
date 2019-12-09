@@ -1,0 +1,8 @@
+[
+  {"varName":"BK_total_transaction_count","fun":"SUM","level":"ML2","dType":"long","baseColumn":"L2_BK_total_transaction_count"},
+  {"varName":"BK_total_transaction_size","fun":"SUM","level":"ML2","dType":"double","baseColumn":"L2_BK_total_transaction_size"},
+  {"varName":"RU_total_transaction_count","fun":"SUM","level":"ML2","dType":"long","baseColumn":"L2_RU_total_transaction_count"},
+  {"varName":"RU_total_transaction_size","fun":"SUM","level":"ML2","dType":"double","baseColumn":"L2_RU_total_transaction_size"},
+  {"varName":"EC_total_transaction_count","fun":"SUM","level":"ML2","dType":"long","baseColumn":"L2_EC_total_transaction_count"},
+  {"varName":"EC_total_transaction_size","fun":"SUM","level":"ML2","dType":"double","baseColumn":"L2_EC_total_transaction_size"}
+]

@@ -1,0 +1,13 @@
+job.name=SendEmailFeatSanityReport
+
+type=command
+
+# DSR = dailySanityReport
+DSR_report_path=s3://midgar-aws-workspace/%s/mapfeatures/measurements/sanity_reports/final/dt=
+DSR_email_from=noreply_paytmlabs@paytm.com
+DSR_email_to=prabhat.saraswat@paytm.com,sagun.bajracharya@paytm.com,santoshi.nadar@paytm.com,pawan.lamba@paytm.com
+DSR_email_subject="Engage - Daily Sanity Report"
+DSR_email_CC=prabhat.saraswat@paytm.com
+
+command=python -u ${baseDir}/bin/send_sanity_report.py ${job.targetDate} 1 ${flowEnv} ${DSR_report_path} ${DSR_email_from} ${DSR_email_to} ${DSR_email_subject} ${DSR_email_CC}
+dependencies=JoinSanityReports

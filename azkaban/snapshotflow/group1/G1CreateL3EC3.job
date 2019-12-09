@@ -1,0 +1,11 @@
+job.name=G1CreateL3EC3
+job.class=com.paytm.map.features.Chakki.CreateDataSet
+
+job.nExecutors=64
+job.executorMem=8g
+job.executorCores=1
+
+type=command
+levelPrefix=L3EC3
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries} --optArgs "${levelPrefix} ${groupPrefix}"
+dependencies=G1CheckL3EC3Aggregates

@@ -1,0 +1,15 @@
+[
+  {"varName":"SCB_Features","fun":"SUPERCASHBACK_AGG","dType":"cashback_type","level":"SCB","baseColumn":"superCash"},
+  {"varName":"SCB_unAck","fun":"SUPERCASHBACK_UNACK","dType":"cashback_unAck_type","level":"SCB","baseColumn":"superCash"},
+  {"varName":"SCB_initialized","fun":"SUPERCASHBACK_INITIALIZED","dType":"cashback_initialized_type","level":"SCB","baseColumn":"superCash"},
+  {"varName":"SCB_inprogress","fun":"SUPERCASHBACK_INPROGRESS","dType":"cashback_inprogress_type","level":"SCB","baseColumn":"superCash"},
+  {"varName":"SCB_completed","fun":"SUPERCASHBACK_COMPLETED","dType":"cashback_completed_type","level":"SCB","baseColumn":"superCash"},
+  {"varName":"SCB_expired","fun":"SUPERCASHBACK_EXPIRED","dType":"cashback_expired_type","level":"SCB","baseColumn":"superCash"},
+  {"varName":"SCB_totalinstance","fun":"SUPERCASHBACK_TOTALINSTANCE","dType":"cashback_total_instance_type","level":"SCB","baseColumn":"superCash"},
+  {"varName":"SCB_lastcompleted","fun":"SUPERCASHBACK_LASTCOMPLETED","dType":"cashback_last_camp_completed_type","level":"SCB","baseColumn":"superCash"},
+  {"varName":"SCB_lastexpired","fun":"SUPERCASHBACK_LASTEXPIRED","dType":"cashback_last_camp_expired_type","level":"SCB","baseColumn":"superCash"},
+  {"varName":"SCB_inprogress_start","fun":"SUPERCASHBACK_INPROGSTART","dType":"cashback_current_init_inprog_start_type","level":"SCB","baseColumn":"superCash"},
+  {"varName":"SCB_inprogress_expiry","fun":"SUPERCASHBACK_INPROGEXPIRY","dType":"cashback_current_init_inprog_expiry_type","level":"SCB","baseColumn":"superCash"},
+  {"varName":"SCB_inprogress_stage","fun":"SUPERCASHBACK_INPROGSTAGE","dType":"cashback_current_inprogress_stage_type","level":"SCB","baseColumn":"superCash"},
+  {"varName":"SCB_inprogress_last_txn_date","fun":"SUPERCASHBACK_INRPOGLASTXN","dType":"cashback_current_inprogress_last_txn_type","level":"SCB","baseColumn":"superCash"}
+]

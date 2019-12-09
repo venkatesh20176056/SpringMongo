@@ -1,0 +1,3 @@
+[
+  {"varName":"SMS_sender_name_and_time","fun":"SMS_AGG","dType":"smsType","level":"SMS","baseColumn":"SMS_sender_name_and_time"}
+]

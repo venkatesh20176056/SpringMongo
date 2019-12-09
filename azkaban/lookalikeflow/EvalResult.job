@@ -1,0 +1,24 @@
+job.name=EvalResult
+job.class=com.paytm.map.features.similarity.Evaluation.EvalResult
+
+job.driverMem=12g
+job.nExecutors=20
+job.executorMem=16g
+job.executorCores=1
+
+scoreThreshold=0.7
+jobConf="--conf spark.executor.memoryOverhead=6000m --conf spark.network.timeout=720000s"
+
+
+# from AWS lambda but override by Azkaban input
+# concat_n =5
+# distance_threshold = 0.45
+# kendall_threshold = 0.1
+
+
+
+# To be injected by lambda
+job.mainArgs="--pooling ${pooling} --ground_truth_universe_path ${ground_truth_universe_path} --seed_path ${seed_path} --execution_timestamp ${executionTimestamp} --segment_id ${segmentId} --param_combination_size ${param_combination_size} --positive_sample_ratio ${positiveSampleRatio} --old_model_name ${old_model_name} --new_model_name ${new_model_name} --old_model_param ${old_model_param} --old_model_vector ${old_model_vector} --new_model_param ${new_model_param} --new_model_vector ${new_model_vector} --eval_seed_universe_type ${eval_seed_universe_type} --rm_customers_only_clicks ${rm_customers_only_clicks}"
+type=command
+dependencies=ExternalTrainingAndTestingDataSimulator
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries} --optCmd ${jobConf} --optArgs ${job.mainArgs}

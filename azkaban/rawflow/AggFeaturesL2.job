@@ -1,0 +1,11 @@
+job.name=AggFeaturesL2
+job.class=com.paytm.map.features.base.AggFeaturesL2
+
+job.nExecutors=12
+job.executorCores=3
+job.executorMem=7g
+
+type=command
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries} --optCmds "--conf spark.yarn.executor.memoryOverhead=${job.memoryOverhead2G}" --optArgs "${job.lookBackDays}"
+dependencies=SalesPromoCategoryTable
+

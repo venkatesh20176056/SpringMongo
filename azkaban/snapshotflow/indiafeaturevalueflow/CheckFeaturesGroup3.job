@@ -1,0 +1,5 @@
+job.name=CheckFeaturesGroup3
+
+type=command
+featurePath="${featureRootKeyPrefix}/3/flatTable"
+command=python ${baseDir}/bin/check_s3.py ${job.name} ${flowEnv} ${job.targetDate} ${featurePath} --dateFormat "%Y-%m-%d" --dateSeparator "/dt=" --timeout 14400

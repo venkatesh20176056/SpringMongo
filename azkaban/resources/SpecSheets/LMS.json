@@ -1,0 +1,11 @@
+[
+  {"varName":"LMS_POSTPAID_account_details","fun":"COLLECT_LIST","dType":"lmsType","level":"LMS","baseColumn":"account_details"},
+  {"varName":"LMS_POSTPAID_contact_by_SMS","fun":"MAX","level":"LMS","dType":"int","baseColumn":"contact_by_SMS"},
+  {"varName":"LMS_POSTPAID_contact_by_IVR","fun":"MAX","level":"LMS","dType":"int","baseColumn":"contact_by_IVR"},
+  {"varName":"LMS_POSTPAID_contact_by_telecalling","fun":"MAX","level":"LMS","dType":"int","baseColumn":"contact_by_telecalling"},
+  {"varName":"LMS_POSTPAIDV2_account_details","fun":"COLLECT_LIST","dType":"lmsV2Type","level":"LMSV2","baseColumn":"account_details"},
+  {"varName":"LMS_POSTPAIDV2_contact_by_SMS","fun":"MAX","level":"LMSV2","dType":"int","baseColumn":"contact_by_SMS"},
+  {"varName":"LMS_POSTPAIDV2_contact_by_IVR","fun":"MAX","level":"LMSV2","dType":"int","baseColumn":"contact_by_IVR"},
+  {"varName":"LMS_POSTPAIDV2_contact_by_telecalling","fun":"MAX","level":"LMSV2","dType":"int","baseColumn":"contact_by_telecalling"},
+  {"varName":"LMS_POSTPAIDV2_max_dpd","fun":"MAX","level":"LMSV2","dType":"int","baseColumn":"dpd"}
+]

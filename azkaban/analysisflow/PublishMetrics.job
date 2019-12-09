@@ -1,0 +1,6 @@
+job.name=PublishMetrics
+job.bucket=map-features-sparklens-analyzer
+job.class= com.paytm.map.featuresanalysis.AnalyzeSparkJob
+
+type=command
+command=bash ${baseDir}/bin/upload_sparkanalysis_metrics.sh ${job.bucket} ${flowEnv} ${job.class} ${resourceManagerHost} ${baseDir}/mapfeatures.jar

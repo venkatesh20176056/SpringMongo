@@ -1,0 +1,7 @@
+job.name=CheckPaymentsTableNewSTR
+
+type=command
+featurePath="${rawTablePathS3}/baseTables/payements_data/source=newSTR"
+
+command=python ${baseDir}/bin/check_s3.py ${job.name} ${flowEnv} ${job.targetDate} ${featurePath} --partitioned="false"
+dependencies=UploadSpecs

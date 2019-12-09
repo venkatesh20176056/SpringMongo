@@ -1,0 +1,5 @@
+job.name=AnalyzeFlow
+
+type=command
+command=echo "Finished Analysis Flow"
+dependencies=PublishMetrics,PublishFeatureUsage

@@ -1,0 +1,4 @@
+[
+  {"varName":"BK_distance","fun":"MAX","dType":"double","level":"GATravel","baseColumn":"distance"},
+  {"varName":"BK_speed","fun":"MAX","dType":"double","level":"GATravel","baseColumn":"speed"}
+]

@@ -1,0 +1,8 @@
+job.name=SalesPromoMetaTable
+job.class=com.paytm.map.features.base.DFCache
+
+job.nExecutors=15
+
+type=command
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries} --optArgs "${job.lookBackDays} salesPromoMetaTable"
+dependencies=AggFeaturesL2

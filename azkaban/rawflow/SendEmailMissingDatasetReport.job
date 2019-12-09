@@ -1,0 +1,12 @@
+job.name=SendEmailMissingDatasetReport
+
+type=command
+
+MDR_report_path=s3://midgar-aws-workspace/%s/mapfeatures/measurements/raw_dataset_health_reports/dt=
+MDR_email_from=noreply_paytmlabs@paytm.com
+MDR_email_to=prabhat.saraswat@paytm.com,sagun.bajracharya@paytm.com,santoshi.nadar@paytm.com,pawan.lamba@paytm.com
+MDR_email_subject="MAP - Missing Raw Datasets Report"
+MDR_email_CC=prabhat.saraswat@paytm.com
+
+command=python -u ${baseDir}/bin/send_missing_dataset_report.py ${job.targetDate} 1 ${flowEnv} ${MDR_report_path} ${MDR_email_from} ${MDR_email_to} ${MDR_email_subject} ${MDR_email_CC}
+dependencies=CheckMissingDatasets

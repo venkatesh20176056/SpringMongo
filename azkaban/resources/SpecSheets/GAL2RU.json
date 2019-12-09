@@ -1,0 +1,4 @@
+[
+  {"varName":"RU_total_web_sessions_count","fun":"SUM","dType":"long","level":"GAL2RU","baseColumn":"L2GA_RU_total_web_sessions_count"},
+  {"varName":"RU_total_app_sessions_count","fun":"SUM","dType":"long","level":"GAL2RU","baseColumn":"L2GA_RU_total_app_sessions_count"}
+]

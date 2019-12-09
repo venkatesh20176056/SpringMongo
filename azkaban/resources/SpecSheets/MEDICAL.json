@@ -1,0 +1,15 @@
+[
+  {"varName" : "MEDICAL_transaction_count", "fun" : "SUM", "dType" : "long", "level" : "MEDICAL"},
+  {"varName" : "MEDICAL_transaction_amount", "fun" : "SUM", "dType" : "double", "level" : "MEDICAL"},
+  {"varName" : "MEDICAL_Pharmacy_count", "fun" : "SUM", "dType" : "long", "level" : "MEDICAL"},
+  {"varName" : "MEDICAL_Pharmacy_amount", "fun" : "SUM", "dType" : "double", "level" : "MEDICAL"},
+  {"varName" : "MEDICAL_Wellness_count", "fun" : "SUM", "dType" : "long", "level" : "MEDICAL"},
+  {"varName" : "MEDICAL_Wellness_amount", "fun" : "SUM", "dType" : "double", "level" : "MEDICAL"},
+  {"varName" : "MEDICAL_Doctors_and_Clinic_count", "fun" : "SUM", "dType" : "long", "level" : "MEDICAL"},
+  {"varName" : "MEDICAL_Doctors_and_Clinic_amount", "fun" : "SUM", "dType" : "double", "level" : "MEDICAL"},
+  {"varName" : "MEDICAL_Hospital_count", "fun" : "SUM", "dType" : "long", "level" : "MEDICAL"},
+  {"varName" : "MEDICAL_Hospital_amount", "fun" : "SUM", "dType" : "double", "level" : "MEDICAL"},
+  {"varName" : "MEDICAL_Pathology_Lab_count", "fun" : "SUM", "dType" : "long", "level" : "MEDICAL"},
+  {"varName" : "MEDICAL_Pathology_Lab_amount", "fun" : "SUM", "dType" : "double", "level" : "MEDICAL"},
+  {"varName" : "MEDICAL_last_transaction", "fun" : "MAX", "dType" : "timestamp", "level" : "MEDICAL"}
+]

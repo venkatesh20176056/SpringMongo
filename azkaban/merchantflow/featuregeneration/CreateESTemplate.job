@@ -1,0 +1,8 @@
+job.name=CreateESTemplate
+
+type=command
+outPath="${baseDir}/resources/es_mapping_merchant.json"
+featureList="${baseDir}/resources/feature_list_india_merchant.csv"
+template="${baseDir}/resources/es_mapping_template.json"
+
+command=python ${baseDir}/bin/create_es_mapping.py ${featureList} ${index} ${outPath} ${template}

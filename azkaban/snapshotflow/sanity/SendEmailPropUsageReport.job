@@ -1,0 +1,15 @@
+job.name=SendEmailPropUsageReport
+
+type=command
+
+# DPR = daily_propertyusage_report.py
+DPR_report_path=s3://midgar-aws-workspace/%s/mapfeatures/measurements/report/dt=
+DPR_email_from=noreply_paytmlabs@paytm.com
+DPR_email_to=prabhat.saraswat@paytm.com,sagun.bajracharya@paytm.com,santoshi.nadar@paytm.com,pawan.lamba@paytm.com
+DPR_email_subject="Engage Daily Property Usage Report"
+DPR_email_CC=prabhat.saraswat@paytm.com
+
+
+command=python -u ${baseDir}/bin/daily_propertyusage_report.py ${job.targetDate} 0 ${flowEnv} ${DPR_report_path} ${DPR_email_from} ${DPR_email_to} ${DPR_email_subject} ${DPR_email_CC}
+
+dependencies=GeneratePropUsageReport

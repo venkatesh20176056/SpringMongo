@@ -1,0 +1,6 @@
+job.name=CopyBiProd
+
+type=command
+
+command=python ${baseDir}/bin/update_bi_prod.py ${job.targetDate}
+dependencies=CopyCanadaCsv

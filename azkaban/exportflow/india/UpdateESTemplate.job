@@ -1,0 +1,6 @@
+job.name=UpdateESTemplate
+
+type=command
+templatePath="${baseDir}/resources/es_mapping.json"
+command=python ${baseDir}/bin/es_update_template.py ${esNodes} ${templatePath}
+dependencies=CreateESTemplate

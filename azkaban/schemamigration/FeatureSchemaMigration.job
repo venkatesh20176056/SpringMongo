@@ -1,0 +1,12 @@
+dependencies=CheckFeaturesGroup1,CheckFeaturesGroup2,CheckFeaturesGroup3,CheckFeaturesGroup4
+
+job.name=FeatureSchemaMigration
+job.class=com.paytm.map.features.schemamigration.FeatureSchemaMigration
+
+job.driverMem=5gb
+job.nExecutors=50
+job.executorMem=12g
+job.executorCores=4
+
+type=command
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries}

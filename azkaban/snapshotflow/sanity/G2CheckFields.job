@@ -1,0 +1,18 @@
+job.name=G2CheckFields
+job.class=com.paytm.map.features.sanity.CheckFields
+
+dataS3Path=${mumbaiWorkspace}/${flowEnv}/mapfeatures/features/2/flatTable/
+csvFile=${mumbaiWorkspace}/${flowEnv}/mapfeatures/resources/feature_list_india/
+outputCsvPath=${mumbaiWorkspace}/${flowEnv}/mapfeatures/features/fieldCheckSanityReport/2
+
+groupPrefix=2
+
+job.nExecutors=1
+job.executorMem=10g
+job.executorCores=1
+
+optionalArgs = ${dataS3Path} ${csvFile} ${outputCsvPath} ${groupPrefix}
+
+type=command
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries} --optArgs "${optionalArgs}"
+dependencies=G1CheckFields

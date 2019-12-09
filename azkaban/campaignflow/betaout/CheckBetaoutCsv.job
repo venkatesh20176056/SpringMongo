@@ -1,0 +1,6 @@
+job.name=CheckBetaoutCsv
+
+type=command
+betaoutPath="${betaoutDropoffPath}"
+command=python ${baseDir}/bin/check_s3.py ${job.name} ${flowEnv} ${job.targetDate} ${betaoutPath} --dateFormat "%Y-%m-%d" --timeout 60
+dependencies=BetaoutGeneration

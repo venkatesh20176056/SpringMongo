@@ -1,0 +1,20 @@
+job.name=EvalResultUsingPrecomputedHash
+job.class=com.paytm.map.features.similarity.Evaluation.EvalResultUsingPrecomputedHash
+
+job.driverMem=12g
+job.nExecutors=12
+job.executorMem=16g
+job.executorCores=1
+
+scoreThreshold=0.7
+jobConf="--conf spark.executor.memoryOverhead=6000m --conf spark.network.timeout=720000s"
+
+
+
+
+# To be injected by lambda
+job.mainArgs="--execution_timestamp ${executionTimestamp} --segment_id ${segmentId} --universe_path ${universe_path} --user_limit ${user_limit} --param_combination_size ${param_combination_size} --seed_path ${seed_path} --positive_sample_ratio ${positiveSampleRatio} --old_model_name ${old_model_name} --new_model_name ${new_model_name} --old_model_param ${old_model_param} --new_model_param ${new_model_param}  --eval_seed_universe_type ${eval_seed_universe_type} --rm_customers_only_clicks ${rm_customers_only_clicks}"
+
+type=command
+
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries} --optCmd ${jobConf} --optArgs ${job.mainArgs}

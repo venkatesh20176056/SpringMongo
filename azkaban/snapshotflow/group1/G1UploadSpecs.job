@@ -1,0 +1,4 @@
+job.name=G1UploadSpecs
+
+type=command
+command=python ${baseDir}/bin/UploadSpecsNFeatureList.py ${baseDir}/resources ${resourcesPathS3} customer

@@ -1,0 +1,7 @@
+job.name=G4CheckInputG1FlatTable
+
+featurePath="${featuresPathS3}/1/flatTable"
+
+type=command
+command=python ${baseDir}/bin/check_s3.py ${job.name} ${flowEnv} ${job.targetDate} ${featurePath} --dateFormat "%Y-%m-%d" --dateSeparator "/dt=" --timeout 14400
+dependencies=G4CheckCustomerSegmentation

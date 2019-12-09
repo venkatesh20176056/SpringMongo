@@ -1,0 +1,11 @@
+[
+  {"varName":"GOLD_buy_total_transaction_count","fun":"SUM","dType":"long","level":"GOLD","baseColumn":"GOLD_buy_total_transaction_count"},
+  {"varName":"GOLD_buy_total_transaction_size","fun":"SUM","dType":"double","level":"GOLD","baseColumn":"GOLD_buy_total_transaction_size"},
+  {"varName":"GOLD_buy_last_transaction_size","fun":"GETLAST","dType":"double","level":"GOLD","baseColumn":"GOLD_buy_last_transaction_size","partitionBy":"customer_id","orderBy": "dt"},
+  {"varName":"GOLD_buy_last_transaction_date","fun":"MAX","dType":"date","level":"GOLD","baseColumn":"GOLD_buy_last_transaction_date"},
+  {"varName":"GOLD_sell_total_transaction_count","fun":"SUM","dType":"long","level":"GOLD","baseColumn":"GOLD_sell_total_transaction_count"},
+  {"varName":"GOLD_sell_total_transaction_size","fun":"SUM","dType":"double","level":"GOLD","baseColumn":"GOLD_sell_total_transaction_size"},
+  {"varName":"GOLD_sell_last_transaction_size","fun":"GETLAST","dType":"double","level":"GOLD","baseColumn":"GOLD_sell_last_transaction_size","partitionBy":"customer_id","orderBy": "dt"},
+  {"varName":"GOLD_sell_last_transaction_date","fun":"MAX","dType":"date","level":"GOLD","baseColumn":"GOLD_sell_last_transaction_date"},
+  {"varName":"GOLD_total_goldback_received","fun":"SUM","dType":"double","level":"GOLD","baseColumn":"GOLD_total_goldback_received"}
+]

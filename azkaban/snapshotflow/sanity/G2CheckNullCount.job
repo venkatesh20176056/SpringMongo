@@ -1,0 +1,12 @@
+job.name=G2CheckNullCount
+job.class=com.paytm.map.features.sanity.CheckFeatureCounts
+
+job.nExecutors=50
+job.executorMem=16g
+job.executorCores=2
+
+groupPrefix=2
+
+type=command
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries} --optCmds "--conf spark.sql.shuffle.partitions=500" --optArgs "${groupPrefix} "
+dependencies=G1CheckNullCount

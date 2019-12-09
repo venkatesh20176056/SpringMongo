@@ -1,0 +1,4 @@
+type=command
+
+command=python3 ${baseDir}/bin/glue_crawler_job.py ${flowEnv} service-role/AWSGlueServiceRole-alpha daily_flatfeatures 1 ${job.targetDate}
+dependencies=G1CheckFlatTable

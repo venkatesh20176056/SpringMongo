@@ -1,0 +1,13 @@
+job.name=G1CreateL1
+job.class=com.paytm.map.features.Chakki.CreateDataSet
+
+type=command
+levelPrefix=PAYTM
+
+job.nExecutors=60
+job.executorMem=10g
+job.executorCores=4
+job.memoryOverhead=4g
+
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries} --optCmds "--conf spark.sql.shuffle.partitions=1000 --conf spark.yarn.executor.memoryOverhead=${job.memoryOverhead}" --optArgs "${levelPrefix} ${groupPrefix}"
+dependencies=G1CheckL1Aggregates

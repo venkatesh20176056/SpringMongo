@@ -1,0 +1,11 @@
+job.name=G3CreateL3EC1
+job.class=com.paytm.map.features.Chakki.CreateDataSet
+
+job.nExecutors=80
+job.executorMem=10g
+job.executorCores=4
+
+type=command
+levelPrefix=L3EC1
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries} --optCmds "--conf spark.sql.shuffle.partitions=1000" --optArgs "${levelPrefix} ${groupPrefix}"
+dependencies=G3CheckL3EC1Aggregates

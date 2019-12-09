@@ -1,0 +1,11 @@
+job.name=G1CreateGAL2EC
+job.class=com.paytm.map.features.Chakki.CreateDataSet
+job.nExecutors=32
+job.executorCores=2
+job.executorMem=8g
+
+type=command
+levelPrefix=GAL2EC
+
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries} --optArgs "${levelPrefix} ${groupPrefix}"
+dependencies=G1CreateGAL2BK

@@ -1,0 +1,11 @@
+job.name=CreateExportHero
+job.class=com.paytm.map.features.datasets.hero.CreateExportHeroDataset
+
+type=command
+levelPrefix=HERO
+
+job.nExecutors=64
+job.executorMem=4g
+job.executorCores=2
+
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries} --optCmds "--conf spark.sql.shuffle.partitions=10 --conf spark.eventLog.enabled=true --conf spark.eventLog.dir=hdfs:///var/log/spark/apps" --optArgs "${groupPrefix}"

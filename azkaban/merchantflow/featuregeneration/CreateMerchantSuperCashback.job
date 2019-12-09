@@ -1,0 +1,11 @@
+job.name=CreateMerchantSuperCashback
+job.class=com.paytm.map.features.merchant.DataSetJob
+
+job.nExecutors=24
+job.executorMem=4g
+job.executorCores=2
+
+type=command
+levelPrefix=MSC
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries} --optArgs "${levelPrefix}"
+dependencies=MerchantSuperCashback

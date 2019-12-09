@@ -1,0 +1,14 @@
+job.name=G3CreatePaytmFirstDropped
+job.class=com.paytm.map.features.Chakki.CreateDataSet
+
+job.nExecutors=8
+job.executorMem=4g
+job.executorCores=4
+levelPrefix=PaytmFirstDropped
+
+cacheTo=memory
+mergeBaseTableSchema=true
+
+type=command
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries} --optArgs "${levelPrefix} ${groupPrefix} ${cacheTo} ${mergeBaseTableSchema}"
+dependencies=G3CreatePayments

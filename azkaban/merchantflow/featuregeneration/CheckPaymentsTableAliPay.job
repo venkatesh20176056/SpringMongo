@@ -1,0 +1,7 @@
+job.name=CheckPaymentsTableAliPay
+
+type=command
+featurePath="${rawTablePathS3}/baseTables/payements_data/source=alipay"
+
+command=python ${baseDir}/bin/check_s3.py ${job.name} ${flowEnv} ${job.targetDate} ${featurePath} --partitioned="false"
+dependencies=UploadSpecs

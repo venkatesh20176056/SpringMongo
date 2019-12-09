@@ -1,0 +1,11 @@
+job.name=MerchantProfile
+job.class=com.paytm.map.features.merchant.ProfileJob
+
+type=command
+
+job.nExecutors=60
+job.executorMem=12g
+job.executorCores=4
+
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries}
+dependencies=UploadSpecs

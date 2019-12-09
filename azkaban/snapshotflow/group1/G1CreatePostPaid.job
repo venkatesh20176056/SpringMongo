@@ -1,0 +1,13 @@
+job.name=G1CreatePostPaid
+job.class=com.paytm.map.features.Chakki.CreateDataSet
+
+job.nExecutors=50
+job.executorMem=12g
+job.executorCores=2
+job.memoryOverhead=4g
+
+type=command
+levelPrefix=POSTPAID
+
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries} --optCmds "--conf spark.sql.shuffle.partitions=1000 --conf spark.yarn.executor.memoryOverhead=${job.memoryOverhead}" --optArgs "${levelPrefix} ${groupPrefix}"
+dependencies=G1CreateL3EC3

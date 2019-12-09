@@ -1,0 +1,6 @@
+job.name=G3CheckL3RUAggregates
+
+type=command
+featurePath="${rawTablePathS3}/aggregates/L3RU"
+command=python ${baseDir}/bin/check_s3.py ${job.name} ${flowEnv} ${job.targetDate} ${featurePath} --dateFormat "%Y-%m-%d" --dateSeparator "/dt="
+dependencies=G3CreateL1

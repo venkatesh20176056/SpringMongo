@@ -1,0 +1,3 @@
+type=command
+command=echo "Betaout Data Updated!"
+dependencies=CheckBetaoutCsv

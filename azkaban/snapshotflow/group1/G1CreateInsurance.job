@@ -1,0 +1,14 @@
+job.name=G1CreateInsurance
+job.class=com.paytm.map.features.Chakki.CreateDataSet
+
+job.nExecutors=8
+job.executorMem=8g
+job.executorCores=4
+levelPrefix=INSURANCE
+
+cache=memory
+mergeSchema=true
+
+type=command
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries} --optArgs "${levelPrefix} ${groupPrefix} ${cache} ${mergeSchema}" --optCmds "--conf spark.memory.fraction=0.8"
+dependencies=G1CreateMedical

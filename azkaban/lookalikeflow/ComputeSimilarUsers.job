@@ -1,0 +1,17 @@
+job.name=ComputeSimilarUsers
+job.class=com.paytm.map.features.similarity.Model.ComputeSimilarUsers
+
+job.driverMem=8g
+job.nExecutors=30
+job.executorMem=16g
+job.executorCores=4
+
+scoreThreshold=0.7
+jobConf="--conf spark.executor.memoryOverhead=9000m --conf spark.network.timeout=720000s"
+
+
+# To be injected by lambda
+job.mainArgs="--segment_id ${segmentId} --execution_timestamp ${executionTimestamp} --user_limit ${userLimit} --distance_threshold ${distanceThreshold} --kendall_threshold ${kendallThreshold} --user_base_path ${userBasePath}"
+type=command
+dependencies=SeedUserGeneration,UniverseUserGeneration
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries} --optCmd ${jobConf} --optArgs ${job.mainArgs}

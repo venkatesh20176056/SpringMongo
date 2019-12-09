@@ -1,0 +1,11 @@
+job.name=CheckMissingDatasets
+job.class=com.paytm.map.features.sanity.MissingDatasetAlert
+
+job.nExecutors=20
+job.executorMem=2g
+job.executorCores=2
+job.driverMem=10g
+
+type=command
+command=python ${baseDir}/bin/spark_native_submit.py ${flowEnv} ${job.targetDate} ${baseDir}/mapfeatures.jar ${job.class} ${job.name} ${job.driverMem} ${job.nExecutors} ${job.executorMem} ${job.executorCores} ${azkaban.job.attempt} ${retries}
+dependencies=AggFeaturesL3RU,SuperCashBackFeatures,LastSeenAgg,AggFeaturesPostpaid,AggFeaturesL3EC1,AggFeaturesL3EC3,AggFeaturesL3EC4,CreateProfile,AggFeaturesL3BK,LocationFeatures,GamepindFeatures,OverallFeatures,MedicalFeatures,InsuranceFeatures,CopyBankFeatures,CustomerDeviceFeatures

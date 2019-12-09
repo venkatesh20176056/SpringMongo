@@ -1,0 +1,14 @@
+[
+  {"varName":"BK_total_product_views_web","fun":"SUM","dType":"long","level":"GAL2","baseColumn":"L2GA_BK_total_product_views_web"},
+  {"varName":"BK_total_product_views_app","fun":"SUM","dType":"long","level":"GAL2","baseColumn":"L2GA_BK_total_product_views_app"},
+  {"varName":"BK_total_product_clicks_web","fun":"SUM","dType":"long","level":"GAL2","baseColumn":"L2GA_BK_total_product_clicks_web"},
+  {"varName":"BK_total_product_clicks_app","fun":"SUM","dType":"long","level":"GAL2","baseColumn":"L2GA_BK_total_product_clicks_app"},
+  {"varName":"BK_total_pdp_sessions_web","fun":"SUM","dType":"long","level":"GAL2","baseColumn":"L2GA_BK_total_pdp_sessions_web"},
+  {"varName":"BK_total_pdp_sessions_app","fun":"SUM","dType":"long","level":"GAL2","baseColumn":"L2GA_BK_total_pdp_sessions_app"},
+  {"varName":"EC_total_product_views_web","fun":"SUM","dType":"long","level":"GAL2","baseColumn":"L2GA_EC_total_product_views_web"},
+  {"varName":"EC_total_product_views_app","fun":"SUM","dType":"long","level":"GAL2","baseColumn":"L2GA_EC_total_product_views_app"},
+  {"varName":"EC_total_product_clicks_web","fun":"SUM","dType":"long","level":"GAL2","baseColumn":"L2GA_EC_total_product_clicks_web"},
+  {"varName":"EC_total_product_clicks_app","fun":"SUM","dType":"long","level":"GAL2","baseColumn":"L2GA_EC_total_product_clicks_app"},
+  {"varName":"EC_total_pdp_sessions_web","fun":"SUM","dType":"long","level":"GAL2","baseColumn":"L2GA_EC_total_pdp_sessions_web"},
+  {"varName":"EC_total_pdp_sessions_app","fun":"SUM","dType":"long","level":"GAL2","baseColumn":"L2GA_EC_total_pdp_sessions_app"}
+]
